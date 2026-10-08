@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resource Hub — SOAP Autopilot</title>
+<style>
+:root{--bg:#f7f7f5;--card:#ffffff;--line:#e8e6e3;--txt:#1c1917;--mut:#57534e;--acc:#0f766e;--acc2:#14b8a6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI Variable Text','Segoe UI',-apple-system,BlinkMacSystemFont,'Inter',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px}
+a.back{color:var(--acc);text-decoration:none;font-size:.92rem}
+h1{margin:14px 0 4px;font-size:2rem;letter-spacing:-.01em;font-weight:700}
+.lede{color:var(--mut);margin-bottom:26px}
+h2{font-size:1.2rem;color:var(--acc);margin:34px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px;font-weight:650}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(28,25,23,.06)}
+.card h3{font-size:1rem;margin-bottom:6px;font-weight:650}
+.card p,.card li{color:var(--mut);font-size:.92rem}
+.card ul{padding-left:18px;margin-top:6px}
+.card li{padding:3px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:var(--card);border-radius:10px;overflow:hidden}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}
+th{background:#fafaf9;color:var(--txt)}
+td{color:var(--mut)}
+.tip{background:#f0fdfa;border-left:4px solid var(--acc);border-radius:8px;padding:14px 18px;margin:14px 0;font-size:.93rem;color:#134e4a}
+footer{margin-top:50px;padding:24px 0;border-top:1px solid var(--line);color:var(--mut);text-align:center;font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="/">← Back to SOAP Autopilot</a>
+<h1>📚 Resource Hub</h1>
+<p class="lede">Everything a solo practitioner needs — cheat sheets, handouts, payer guides and playbooks. One stop, zero guesswork.</p>
+
+<h2>🧾 Payer Cheat Sheets</h2>
+
+<div class="tip"><b>Medicare 8-Minute Rule — quick units table:</b></div>
+<table>
+<tr><th>Minutes</th><th>Billable Units (15-min)</th><th>Minutes</th><th>Units</th></tr>
+<tr><td>8–22</td><td>1</td><td>53–67</td><td>4</td></tr>
+<tr><td>23–37</td><td>2</td><td>68–82</td><td>5</td></tr>
+<tr><td>38–52</td><td>3</td><td>83–97</td><td>6</td></tr>
+</table>
+<p style="color:var(--mut);font-size:.88rem;margin-top:8px">Say "45 min" in your dictation — Autopilot computes the units into the note automatically.</p>
+
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3>CPT quick-reference</h3><ul>
+<li><b>97124</b> — massage, 15-min units</li>
+<li><b>97140</b> — manual therapy techniques</li>
+<li><b>97112</b> — neuromuscular reeducation</li>
+<li><b>97110</b> — therapeutic exercise</li></ul>
+<p style="margin-top:6px">Always verify payer-specific coverage before billing.</p></div>
+<div class="card"><h3>Common ICD-10 anchors</h3><ul>
+<li>M54.2 cervalgia · M54.5 low back pain</li>
+<li>M54.6 thoracic pain · M53.3 SI dysfunction</li>
+<li>M77.1/M77.0 epicondylitis (L/R)</li>
+<li>M25.5x- joint pain by region + laterality digit</li>
+<li>M62.83- muscle spasm</li></ul></div>
+<div class="card"><h3>VA DBQ essentials</h3><ul>
+<li>Record active ROM in <b>degrees</b></li>
+<li>Pain on motion + flare-up frequency/duration</li>
+<li>Functional loss in veteran's own words (S) + examiner terms (O)</li>
+<li>Relevant DBQs: Neck (Cervical), Back (Thoracolumbar), Knee &amp; Lower Leg</li></ul></div>
+</div>
+
+<h2>🗺️ Muscle Dictation Quick Map</h2>
+<div class="grid">
+<div class="card"><h3>Say it naturally — we'll find the muscle</h3><ul>
+<li>"Traps" → trapezius (upper/mid/lower recognized in context)</li>
+<li>"QL" → quadratus lumborum</li>
+<li>"Pecs" → pectoralis major/minor</li>
+<li>"Lats" → latissimus dorsi</li>
+<li>"Levator" / "lev scap" → levator scapulae</li>
+<li>"SCM" / "sternocleidomastoid"</li>
+<li>"Rhomboids", "suboccipitals", "scalenes"</li>
+<li>"Rotator cuff" → supraspinatus/infraspinatus/subscap/teres minor</li></ul>
+<p style="margin-top:6px">Full-body coverage: spine, shoulder girdle, arm→hand, glutes/pelvis, thigh/knee, leg/foot, abdomen/core, jaw/TMJ.</p></div>
+<div class="card"><h3>Laterality shortcuts</h3><p>Your engine understands all of these:</p><ul>
+<li>"left neck stiffness" → every cervical muscle gets (L)</li>
+<li>"both traps" / "bilat" / "(B)" → bilateral tag</li>
+<li>"right knee pain" → right-sided knee musculature expansion</li></ul>
+<p style="margin-top:6px">Regional terms auto-expand: "worked cervical" pulls SCM, upper trap, levator, scalenes, suboccipitals &amp; splenius — tagged [regional] so you can audit inference.</p></div>
+<div class="card"><h3>Section-routing words that work</h3><ul>
+<li><b>S:</b> "reports…", "pain 6/10", "since last week", "aggravated by…"</li>
+<li><b>O:</b> "palpation found…", "hypertonic", "trigger points", "ROM decreased"</li>
+<li><b>A:</b> "consistent with…", "likely myofascial strain"</li>
+<li><b>P:</b> "performed deep tissue…", "home care:", "next visit reassess"</li>
+<li>Plain "worked/treated/massaged X" → routed to Objective automatically</li></ul></div>
+</div>
+
+<h2>📄 Client Home-Care Handouts (print-ready text)</h2>
+<div class="grid">
+<div class="card"><h3>Cervical / Neck</h3><ul>
+<li>Chin tucks: 2×10 daily, slow hold 3s</li>
+<li>Suboccipital release: tennis ball at skull base, 1–2 min/side</li>
+<li>Doorway pec stretch: 30s × 3</li>
+<li>Upper trap stretch: ear-to-shoulder, 30s/side</li></ul></div>
+<div class="card"><h3>Lumbar / Low Back</h3><ul>
+<li>Knees-to-chest: 30s × 3 morning + evening</li>
+<li>Child's pose: 60s breathing focus</li>
+<li>Standing hip hinge drill for lifting mechanics</li>
+<li>Walk 10 min after prolonged sitting</li></ul></div>
+<div class="card"><h3>Shoulder / Upper Back</h3><ul>
+<li>Wall slides: 2×10 daily</li>
+<li>Sleeper stretch: 30s/side (if cleared)</li>
+<li>Band external rotations: 2×12 light</li>
+<li>Micro-break posture reset every 45 min desk time</li></ul></div>
+<div class="card"><h3>Hip / Lower Body</h3><ul>
+<li>Piriformis figure-4 stretch: 30s/side</li>
+<li>Calf wall stretch: knee straight then bent, 30s each</li>
+<li>Plantar fascia roll: frozen bottle 2 min/foot</li>
+<li>Hamstring doorway stretch: 30s/side</li></ul></div>
+</div>
+
+<h2>🎓 Audit-Proof Note Playbook</h2>
+<div class="grid">
+<div class="card"><h3>The S/O/A/P formula</h3><ul>
+<li><b>S</b>: patient's words + pain score + aggravators + timeline. Never your opinion here.</li>
+<li><b>O</b>: measurable findings — tone, ROM degrees, palpation results + treatment performed with minutes.</li>
+<li><b>A</b>: working impression linking findings to function ("limits overhead reach, driving tolerance").</li>
+<li><b>P</b>: techniques applied, client response, home care issued, reassessment plan.</li></ul></div>
+<div class="card"><h3>Weak vs strong sentences</h3><ul>
+<li>❌ "Worked on neck." → ✅ "Performed trigger point release to left levator scapulae and deep tissue to upper traps bilaterally, 20 min."</li>
+<li>❌ "Feels better." → ✅ "Reports pain 6/10 → 3/10 post-treatment; cervical rotation improved ~15°."</li>
+<li>❌ No goals → ✅ "Goal: pain ≤3/10 and full pain-free rotation within 4 visits."</li></ul></div>
+<div class="card"><h3>Red-flag screeners to document</h3><ul>
+<li>Radiating pain w/ numbness or weakness → refer out note</li>
+<li>Unexplained weight loss / night pain → physician clearance</li>
+<li>Post-surgical regions → surgeon protocol on file</li>
+<li>When in doubt, document why you treated what you treated.</li></ul></div>
+</div>
+
+<footer>SOAP Autopilot Resource Hub · Decision support only — final code selection belongs to the licensed provider.<br><a href="/" style="color:var(--acc)">Back home</a></footer>
+</div>
+</body>
+</html>

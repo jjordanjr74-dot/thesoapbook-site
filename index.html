@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOAP Autopilot — Documentation in Minutes, Not Hours</title>
+<meta name="description" content="SOAP Autopilot turns your dictation into complete, muscle-precise massage therapy SOAP notes. Voice-first, payer-aware, and built for therapists who'd rather be hands-on than heads-down.">
+<style>
+:root{
+  --bg:#f7f7f5; --bg2:#fafaf9; --card:#ffffff; --line:#e8e6e3;
+  --txt:#1c1917; --mut:#57534e; --acc:#0f766e; --acc2:#14b8a6;
+  --amber:#b45309; --rad:16px; --txt3:#8a8680;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI Variable Text','Segoe UI',-apple-system,BlinkMacSystemFont,'Inter',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);z-index:50}
+nav{display:flex;align-items:center;gap:22px;height:60px}
+.logo{font-weight:650;font-size:1.02rem;color:var(--txt);text-decoration:none;display:flex;align-items:center;gap:9px}
+.brand-mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;flex:none;background:linear-gradient(135deg,#14b8a6,#0f766e);box-shadow:0 2px 6px -1px rgba(15,118,110,.45)}
+.brand-mark svg{display:block}
+nav a{color:var(--mut);text-decoration:none;font-size:.92rem;font-weight:520}
+nav a:hover{color:var(--txt)}
+nav .cta{margin-left:auto;background:var(--acc);color:#fff;font-weight:600;padding:9px 18px;border-radius:9px}
+nav .cta:hover{background:#115e59;color:#fff}
+.hero{padding:84px 0 56px;text-align:center;
+  background:radial-gradient(900px 460px at 50% -100px,#ccfbf155,transparent)}
+.badge{display:inline-block;border:1px solid var(--acc);color:var(--acc);background:#f0fdfa;border-radius:999px;padding:4px 16px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:22px}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.12;font-weight:750;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,#0f766e,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{max-width:640px;margin:18px auto 30px;color:var(--mut);font-size:1.1rem}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:600;text-decoration:none;margin:4px}
+.btn-pri{background:var(--acc);color:#fff}
+.btn-pri:hover{background:#115e59;color:#fff}
+.btn-sec{border:1px solid var(--line);color:var(--txt)}
+.btn-sec:hover{background:#f4f4f2}
+.btn:hover{transform:translateY(-1px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;padding:40px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:26px;box-shadow:0 1px 3px rgba(28,25,23,.06)}
+.card h3{margin-bottom:8px;font-size:1.02rem;font-weight:650}
+.card p{color:var(--mut);font-size:.94rem}
+.card .ico{font-size:1.7rem;display:block;margin-bottom:10px}
+section h2{text-align:center;font-size:1.85rem;margin:52px 0 6px;letter-spacing:-.01em;font-weight:700}
+section .lede{text-align:center;color:var(--mut);margin-bottom:8px}
+.stats{display:flex;justify-content:center;gap:48px;padding:32px 0;flex-wrap:wrap}
+.stat b{font-size:2rem;color:var(--acc);display:block;text-align:center}
+.stat span{color:var(--mut);font-size:.9rem}
+.demo-shot{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:34px;margin:28px auto;max-width:860px;font-family:Consolas,monospace;font-size:.85rem;box-shadow:0 1px 3px rgba(28,25,23,.06)}
+.demo-shot .lbl{font-family:'Segoe UI';color:var(--acc);font-weight:700;font-size:.76rem;text-transform:uppercase;letter-spacing:.1em}
+.demo-shot .arrow{text-align:center;color:var(--acc);margin:14px 0;font-family:'Segoe UI'}
+.demo-shot pre{white-space:pre-wrap;color:var(--mut)}
+.res-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:26px 0 40px}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:30px 0 46px;align-items:stretch}
+.price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:30px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(28,25,23,.06)}
+.price-card.hot{border-color:var(--acc);box-shadow:0 8px 30px -8px rgba(15,118,110,.30);position:relative}
+.price-card .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--acc);color:#fff;font-size:.72rem;font-weight:700;border-radius:999px;padding:3px 14px}
+.price{font-size:2.2rem;font-weight:750;margin:8px 0;letter-spacing:-.02em}
+.price small{font-size:.9rem;color:var(--txt3);font-weight:400}
+.price-card ul{list-style:none;margin:14px 0 20px;flex:1}
+.price-card li{padding:5px 0;color:var(--mut);font-size:.93rem}
+.price-card li::before{content:"✓ ";color:var(--acc);font-weight:700}
+.res-card{text-decoration:none;color:inherit;transition:border-color .15s, transform .15s}
+.res-card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:18px 22px;margin-bottom:12px;max-width:760px;margin-inline:auto}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{color:var(--mut);margin-top:10px;font-size:.95rem}
+footer{border-top:1px solid var(--line);margin-top:70px;padding:34px 0;color:var(--txt3);font-size:.88rem;text-align:center}
+footer a{color:var(--acc);text-decoration:none}
+@media(max-width:640px){nav a:not(.cta){display:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><nav>
+  <a class="logo" href="#"><span class="brand-mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-6 3.5 12 3-9 2 3h3"/></svg></span>SOAP Autopilot</a>
+  <a href="#features">Features</a>
+  <a href="#resources">Resources</a>
+  <a href="#compare">Compare</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a class="cta" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup">Try Free</a>
+</nav></div></header>
+
+<section class="hero"><div class="wrap">
+  <span class="badge">Built for massage &amp; manual therapists</span>
+  <h1>Documentation in minutes.<br><span>Back to the table faster.</span></h1>
+  <p class="sub">Speak your session notes naturally — SOAP Autopilot turns raw dictation into complete, muscle-precise, payer-ready SOAP notes with home-care plans and compliance checklists built in.</p>
+  <a class="btn btn-pri" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup">Start Your Free Note</a>
+  <a class="btn btn-sec" href="#demo">See It Work ↓</a>
+</div></section>
+
+<div class="wrap stats">
+  <div class="stat"><b>&lt;60s</b><span>note turnaround by voice</span></div>
+  <div class="stat"><b>50+</b><span>muscles &amp; regions mapped</span></div>
+  <div class="stat"><b>5</b><span>payer profiles supported</span></div>
+  <div class="stat"><b>100%</b><span>deterministic muscle ID</span></div>
+</div>
+
+<section id="features"><div class="wrap">
+  <h2>Why therapists switch — and stay</h2>
+  <p class="lede">Every feature is designed to make finishing notes feel effortless.</p>
+  <div class="grid">
+    <div class="card"><span class="ico">🎤</span><h3>Voice-First Dictation</h3><p>Talk the way you actually talk after a session. Continuous mic capture works right in your browser on desktop or phone.</p></div>
+    <div class="card"><span class="ico">🎯</span><h3>Muscle-Precise Extraction</h3><p>"Left neck pain" expands to SCM, scalenes, levator, upper traps — with laterality tagged automatically. No AI guessing games.</p></div>
+    <div class="card"><span class="ico">📋</span><h3>Payer-Aware Compliance</h3><p>Medicare 8-minute-rule units, CPT/ICD-10 candidates, VA DBQ mapping and audit checklists generated per note.</p></div>
+    <div class="card"><span class="ico">🌱</span><h3>Built-In Home Care Plans</h3><p>Region-matched stretches, self-care scripts and reassessment language drafted for every note — clients stay engaged between visits.</p></div>
+    <div class="card"><span class="ico">🔥</span><h3>Streaks That Motivate</h3><p>Note streaks, weekly documentation goals and progress tracking keep you audit-proof without the guilt.</p></div>
+    <div class="card"><span class="ico">📚</span><h3>One-Stop Resource Hub</h3><p>Cheat sheets, client handouts, technique references and payer guides — everything a solo practice needs in one place.</p></div>
+  </div>
+</div></section>
+
+<section id="demo"><div class="wrap">
+  <h2>From rambling voice memo → finished SOAP note</h2>
+  <p class="lede">Real engine output, exactly as compiled.</p>
+  <div class="demo-shot">
+    <span class="lbl">You say:</span>
+    <pre style="color:var(--mut)">"Patient reports left neck pain 6/10 since last week, worse at the computer.
+Palpation found hypertonic levator scapulae left with trigger points.
+Worked cervical region, deep tissue upper traps bilaterally, 45 min."</pre>
+    <div class="arrow">▼ &nbsp;SOAP Autopilot&nbsp; ▼</div>
+    <span class="lbl">Compiled note:</span>
+    <pre>=== SUBJECTIVE ===
+Patient reports left neck pain rated 6/10, started last week,
+aggravated by computer work.
+
+=== OBJECTIVE ===
+Muscles/muscle groups identified (8):
+- Neck / Levator Scapulae (L) — elevates scapula, extends neck
+- Neck / Scalenes [regional]
+- Shoulder Girdle / Upper Trapezius (bilateral)
+  ... + regional expansion with laterality
+Regions treated: cervical
+
+=== PLAN ===
+[cervical] Gentle ROM; suboccipital release; heat 10 min...
+Home care: chin tucks 2x10 daily; doorway pec stretch...
+Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
+  </div>
+</div></section>
+
+<section id="resources"><div class="wrap">
+  <h2>The one-stop resource hub</h2>
+  <p class="lede">Not just notes — everything you need to run documentation like a pro.</p>
+  <div class="res-list">
+    <a class="card res-card" href="/resources.html"><span class="ico">📄</span><h3>Client Home-Care Handouts</h3><p>Printable stretch &amp; self-care sheets per body region — hand them out or email after each visit.</p></a>
+    <a class="card res-card" href="/resources.html"><span class="ico">🧾</span><h3>Payer Cheat Sheets</h3><p>Medicare 8-minute rule table, CPT quick-reference, ICD-10 anchors and VA DBQ checklist cards.</p></a>
+    <a class="card res-card" href="/resources.html"><span class="ico">🗺️</span><h3>Muscle Quick Map</h3><p>Synonym cheat sheet — "QL", "traps", "pecs" — so your dictation always hits the right muscle.</p></a>
+    <a class="card res-card" href="/resources.html"><span class="ico">🎓</span><h3>Note-Writing Playbook</h3><p>What makes an audit-proof S/O/A/P sentence, with before/after rewrites from real sessions.</p></a>
+  </div>
+</div></section>
+
+<section id="compare"><div class="wrap">
+  <h2>How we stack up</h2>
+  <p class="lede">Every figure below comes from the vendors' own pricing pages, checked 2026-09-22 — see the sources line under the table.</p>
+    <div style="overflow-x:auto;padding:10px 0 20px">
+    <table style="border-collapse:collapse;width:100%;min-width:720px;font-size:.9rem;background:var(--card);border-radius:12px;overflow:hidden">
+      <tr style="background:#fafaf9">
+        <th style="text-align:left;padding:12px;border:1px solid var(--line)">Capability</th>
+        <th style="padding:12px;border:1px solid var(--line);color:var(--acc)">SOAP Autopilot</th>
+        <th style="padding:12px;border:1px solid var(--line)">ClinicSense</th>
+        <th style="padding:12px;border:1px solid var(--line)">Jane</th>
+        <th style="padding:12px;border:1px solid var(--line)">MassageBook</th>
+      </tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Plan prices</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>Free · $14 · $39</b></td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">$39 · $69 · $99</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">$54 · $79 · $99</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">$20 · $59 · $99</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Monthly appointment cap on the entry paid plan</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>None — at any price</b></td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)"><b>20/month</b> ($39 Lite)</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)"><b>20/month</b> ($54 Balance)</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Not stated on pricing</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Cost per extra practitioner</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>$0 — Premier includes team seats</b></td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">+$20/mo each</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">+$17.50–$40/mo each</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Unlimited seats on $99</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Speak naturally → structured note</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ Core engine</td>
+        <td style="text-align:center;border:1px solid var(--line)">Point &amp; click only</td>
+        <td style="text-align:center;border:1px solid var(--line)">✖</td>
+        <td style="text-align:center;border:1px solid var(--line)">✖</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Muscle-precise anatomy expansion (50+ muscles, laterality)</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ Deterministic — no LLM in the anatomy path</b></td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Manual entry</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Manual entry</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Body-chart tap</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Payer compliance engine (Medicare 8-min rule, CPT/ICD-10, VA DBQ)</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ Built into each note</b></td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Partial</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Partial (insurance billing, US/CA)</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">✖</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Bookings portal — policy, waitlist, blocklist, self-serve cancel</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ Included from $14</b></td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ (waitlist, blocklist, no-show tools)</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ (waitlist on higher plans)</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ waitlists on $99</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Embeddable booking page in <i>your own</i> site styling</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ /book?embed=1, no chrome</b></td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">✖ — documented complaint</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">✅ branded booking site</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Pre-built website only</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Recordkeeping — signed &amp; locked notes, chart timeline, insurer export</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ Signed notes with tamper-evident hash + export bundle</b></td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ records; notes editable, no signing</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ records; no note locking</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ records; no note locking</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Reminders — what you pay per message</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>Unlimited email, $0 per message</b> (your SMTP)</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Email on $39; SMS needs $69</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Unlimited email + SMS on $99</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Text + email from $59</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Deposits at booking / no-show protection</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ Refundable deposit, auto-refund inside your window</b></td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ deposits at booking</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">payment policies, card on file</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">integrated payments</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Packages, prepaid sessions, gift certificates</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ session packages + gift certificates with a real ledger</b></td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ packages</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ packages, memberships, gift cards</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ memberships</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Where the clinical text is processed</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>On your machine — $0 per-note inference</b></td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Vendor cloud</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Vendor cloud</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Vendor cloud</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">Anatomical body-chart annotation</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ Shipped</b></td>
+        <td style="text-align:center;border:1px solid var(--line)">✅</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅</td>
+        <td style="text-align:center;border:1px solid var(--line)">✅ premium tiers</td></tr>
+      <tr><td style="padding:10px;border:1px solid var(--line);color:var(--mut)">One-stop resource hub (handouts, cheat sheets, playbook)</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--acc2)"><b>✅ Included free</b></td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">✖</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">✖</td>
+        <td style="text-align:center;border:1px solid var(--line);color:var(--mut)">Guides/blog</td></tr>
+    </table></div>
+    <p class="hint" style="max-width:860px;margin:0 auto 14px;font-size:.85rem">Sources checked 2026-09-22: clinicsense.com/pricing · jane.app/pricing · pro.massagebook.com/pricing · plus ClinicSense's own Capterra review page for the booking-link complaint. MassageBook and Jane run member discounts (AMTA 25%, ABMP 10%) and Jane's prices are per practitioner — confirm current figures before quoting them anywhere else.</p>
+    <div class="tip" style="max-width:860px;margin:0 auto;background:#f0fdfa;border-left:4px solid var(--acc);border-radius:8px;padding:14px 18px;font-size:.93rem;color:#134e4a">
+      <b>The bottom line:</b> the cheapest paid plans at ClinicSense and Jane cap you at <b>20 appointments a month</b>
+      — around one client a working day — and Jane adds $17.50–$40 per extra practitioner. SOAP Autopilot has
+      <b>no appointment caps on any plan</b>, includes the bookings portal and recordkeeping from $14, and keeps
+      the clinical text on your own machine instead of billing you for inference.
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <h2>Simple pricing that respects solo practices</h2>
+  <p class="lede">Start free. Upgrade when the time savings pay for themselves.</p>
+  <div class="pricing">
+    <div class="price-card">
+      <h3>Seedling</h3>
+      <div class="price">$0<small>/month</small></div>
+      <ul>
+        <li>Up to 15 clients</li>
+        <li>1 therapist seat</li>
+        <li>Voice dictation included</li>
+        <li>SOAP notes + body chart</li>
+      </ul>
+      <a class="btn btn-sec" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup" style="text-align:center">Start Free</a>
+    </div>
+    <div class="price-card hot">
+      <span class="tag">Most Popular</span>
+      <h3>Professional</h3>
+      <div class="price">$14<small>/month</small></div>
+      <ul>
+              <li>Unlimited clients</li>
+              <li>1 therapist · online booking</li>
+              <li><b>Client bookings portal</b> — self-serve cancel + waitlist</li>
+              <li><b>Intake forms</b> — health history &amp; consent, filled online</li>
+                      <li><b>Refundable deposits at booking</b> — your no-show protection</li>
+                      <li><b>Unlimited email reminders</b> — sent from your own mailbox, no per-message fee</li>
+                      <li>Booking policy, blocklist &amp; waitlist</li>
+              <li>All payer profiles + compliance blocks</li>
+              <li>Full resource hub + handouts</li>
+              <li>Email support</li>
+            </ul>
+      <a class="btn btn-pri" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup" style="text-align:center">Go Professional</a>
+    </div>
+    <div class="price-card">
+      <h3>Premier</h3>
+      <div class="price">$39<small>/month</small></div>
+      <ul>
+        <li>Everything in Professional</li>
+                <li><b>Recordkeeping</b> — signed &amp; locked notes, chart timeline</li>
+                        <li><b>Record export</b> bundle for insurers, lawyers, peer review</li>
+                        <li><b>Packages &amp; gift certificates</b> — prepaid sessions and balances</li>
+                        <li>Multiple therapist seats</li>
+                <li>Online booking for the team</li>
+                <li>Priority support</li>
+      </ul>
+      <a class="btn btn-sec" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup" style="text-align:center">Contact Us</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="faq" class="faq"><div class="wrap">
+  <h2>Questions, answered</h2>
+  <p class="lede">&nbsp;</p>
+  <details open><summary>Does an AI write my note?</summary><p>No — muscle identification is fully deterministic (rule-based), so it never hallucinates anatomy. The engine structures what YOU said; you review and sign.</p></details>
+  <details><summary>Will my dictation style work?</summary><p>Yes. The engine understands natural speech like "worked the neck, both traps felt ropey" — no rigid template vocabulary required.</p></details>
+  <details><summary>Is it HIPAA-friendly?</summary><p>Notes are processed locally on your device/browser session. We never train models on your clinical content. Client names are optional fields.</p></details>
+  <details><summary>What if I bill insurance?</summary><p>Select a payer profile and every note gains CPT unit math (8-minute rule), ICD-10 anchors, medical-necessity language and an audit checklist.</p></details>
+  <details><summary>Can I use it on my phone between sessions?</summary><p>Yes — install it as an app from your browser (Add to Home Screen) and dictate right from the treatment room.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <b>SOAP Autopilot</b> — Documentation in minutes, not hours.<br>
+  <a href="/resources.html">Resource Hub</a> · Decision support only — final code selection belongs to the licensed provider.<br>
+  © 2026 SOAP Autopilot. All rights reserved.
+</div></footer>
+
+</body>
+</html>
