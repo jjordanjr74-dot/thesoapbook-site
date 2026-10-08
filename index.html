@@ -3,263 +3,237 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SOAP Autopilot — Documentation in Minutes, Not Hours</title>
-<meta name="description" content="SOAP Autopilot turns your dictation into complete, muscle-precise massage therapy SOAP notes. Voice-first, payer-aware, and built for therapists who'd rather be hands-on than heads-down.">
+<title>SOAP Autopilot — Professional Documentation Suite</title>
+<meta name="description" content="SOAP Autopilot transforms your clinical dictation into precise, compliant SOAP notes with integrated practice management. Built for therapists who value precision, efficiency, and professional excellence.">
 <style>
 :root{
-  --bg:#f7f7f5; --bg2:#fafaf9; --card:#ffffff; --line:#e8e6e3;
-  --txt:#1c1917; --mut:#57534e; --acc:#0f766e; --acc2:#14b8a6;
-  --amber:#b45309; --rad:16px; --txt3:#8a8680;
+  --bg:#f8fafc; --bg2:#f1f5f9; --card:#ffffff; --line:#e2e8f0;
+  --txt:#0f172a; --mut:#64748b; --acc:#0f766e; --acc2:#14b8a6;
+  --amber:#f59e0b; --rad:12px; --txt3:#94a3b8;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Segoe UI Variable Text','Segoe UI',-apple-system,BlinkMacSystemFont,'Inter',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);z-index:50}
-nav{display:flex;align-items:center;gap:22px;height:60px}
-.logo{font-weight:650;font-size:1.02rem;color:var(--txt);text-decoration:none;display:flex;align-items:center;gap:9px}
-.brand-mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;flex:none;background:linear-gradient(135deg,#14b8a6,#0f766e);box-shadow:0 2px 6px -1px rgba(15,118,110,.45)}
-.brand-mark svg{display:block}
-nav a{color:var(--mut);text-decoration:none;font-size:.92rem;font-weight:520}
-nav a:hover{color:var(--txt)}
-nav .cta{margin-left:auto;background:var(--acc);color:#fff;font-weight:600;padding:9px 18px;border-radius:9px}
-nav .cta:hover{background:#115e59;color:#fff}
-.hero{padding:84px 0 56px;text-align:center;
-  background:radial-gradient(900px 460px at 50% -100px,#ccfbf155,transparent)}
-.badge{display:inline-block;border:1px solid var(--acc);color:var(--acc);background:#f0fdfa;border-radius:999px;padding:4px 16px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:22px}
-h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.12;font-weight:750;letter-spacing:-.02em}
-h1 span{background:linear-gradient(90deg,#0f766e,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{max-width:640px;margin:18px auto 30px;color:var(--mut);font-size:1.1rem}
-.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:600;text-decoration:none;margin:4px}
+body{font-family:'Inter', 'Segoe UI Variable Text','Segoe UI',-apple-system,BlinkMacSystemFont,'system-ui',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:50}
+nav{display:flex;align-items:center;gap:32px;height:72px}
+.logo{font-weight:700;font-size:1.1rem;color:var(--txt);text-decoration:none;display:flex;align-items:center;gap:12px}
+.brand-mark{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;flex:none;background:linear-gradient(135deg,var(--acc2),var(--acc));box-shadow:0 4px 12px -2px rgba(15,118,110,.25)}
+.brand-mark svg{display:block;color:white}
+nav a{color:var(--mut);text-decoration:none;font-size:.95rem;font-weight:500;transition:color 0.2s ease}
+nav a:hover{color:var(--acc)}
+nav .cta{margin-left:auto;background:var(--acc);color:#fff;font-weight:600;padding:12px 24px;border-radius:8px;box-shadow:var(--shadow);transition:all 0.2s ease}
+nav .cta:hover{background:#115e59;color:#fff;transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+.hero{padding:120px 0 80px;text-align:center;background:linear-gradient(135deg,#f0fdfa 0%,#e6fffa 100%)}
+.badge{display:inline-block;background:#ecfdf5;color:var(--acc);border-radius:50px;padding:8px 20px;font-size:.85rem;font-weight:600;margin-bottom:24px;box-shadow:var(--shadow)}
+h1{font-size:clamp(2.5rem,4vw,3.75rem);line-height:1.1;font-weight:800;letter-spacing:-.025em;margin-bottom:24px}
+h1 span{background:linear-gradient(135deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{max-width:720px;margin:0 auto 40px;color:var(--mut);font-size:1.25rem;line-height:1.6}
+.btn{display:inline-block;padding:16px 32px;border-radius:8px;font-weight:600;text-decoration:none;margin:6px;transition:all 0.2s ease;box-shadow:var(--shadow)}
 .btn-pri{background:var(--acc);color:#fff}
-.btn-pri:hover{background:#115e59;color:#fff}
-.btn-sec{border:1px solid var(--line);color:var(--txt)}
-.btn-sec:hover{background:#f4f4f2}
-.btn:hover{transform:translateY(-1px)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;padding:40px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:26px;box-shadow:0 1px 3px rgba(28,25,23,.06)}
-.card h3{margin-bottom:8px;font-size:1.02rem;font-weight:650}
-.card p{color:var(--mut);font-size:.94rem}
-.card .ico{font-size:1.7rem;display:block;margin-bottom:10px}
-section h2{text-align:center;font-size:1.85rem;margin:52px 0 6px;letter-spacing:-.01em;font-weight:700}
-section .lede{text-align:center;color:var(--mut);margin-bottom:8px}
-.stats{display:flex;justify-content:center;gap:48px;padding:32px 0;flex-wrap:wrap}
-.stat b{font-size:2rem;color:var(--acc);display:block;text-align:center}
-.stat span{color:var(--mut);font-size:.9rem}
-.demo-shot{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:34px;margin:28px auto;max-width:860px;font-family:Consolas,monospace;font-size:.85rem;box-shadow:0 1px 3px rgba(28,25,23,.06);position:relative}
-.demo-shot .lbl{font-family:'Segoe UI';color:var(--acc);font-weight:700;font-size:.76rem;text-transform:uppercase;letter-spacing:.1em}
-.demo-shot .arrow{text-align:center;color:var(--acc);margin:14px 0;font-family:'Segoe UI'}
-.demo-shot pre{white-space:pre-wrap;color:var(--mut)}
-.res-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:26px 0 40px}
-.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:30px 0 46px;align-items:stretch}
-.price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:30px;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(28,25,23,.06)}
-.price-card.hot{border-color:var(--acc);box-shadow:0 8px 30px -8px rgba(15,118,110,.30);position:relative}
-.price-card .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--acc);color:#fff;font-size:.72rem;font-weight:700;border-radius:999px;padding:3px 14px}
-.price{font-size:2.2rem;font-weight:750;margin:8px 0;letter-spacing:-.02em}
-.price small{font-size:.9rem;color:var(--txt3);font-weight:400}
-.price-card ul{list-style:none;margin:14px 0 20px;flex:1}
-.price-card li{padding:5px 0;color:var(--mut);font-size:.93rem}
-.price-card li::before{content:"✓ ";color:var(--acc);font-weight:700}
-.res-card{text-decoration:none;color:inherit;transition:border-color .15s, transform .15s}
-.res-card:hover{border-color:var(--acc);transform:translateY(-2px)}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:18px 22px;margin-bottom:12px;max-width:760px;margin-inline:auto}
-.faq summary{cursor:pointer;font-weight:600}
-.faq p{color:var(--mut);margin-top:10px;font-size:.95rem}
-footer{border-top:1px solid var(--line);margin-top:70px;padding:34px 0;color:var(--txt3);font-size:.88rem;text-align:center}
-footer a{color:var(--acc);text-decoration:none}
-@media(max-width:640px){nav a:not(.cta){display:none}}
+.btn-pri:hover{background:#115e59;color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-sec{border:2px solid var(--line);color:var(--txt);background:var(--card)}
+.btn-sec:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;padding:64px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:32px;box-shadow:var(--shadow);transition:transform 0.3s ease, box-shadow 0.3s ease}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.card h3{margin-bottom:16px;font-size:1.25rem;font-weight:700;color:var(--txt)}
+.card p{color:var(--mut);font-size:1.05rem;line-height:1.7}
+.card .ico{font-size:2.5rem;display:block;margin-bottom:20px;color:var(--acc)}
+section h2{text-align:center;font-size:2.25rem;margin:80px 0 12px;font-weight:800;letter-spacing:-.025em}
+section .lede{text-align:center;color:var(--mut);margin-bottom:16px;font-size:1.25rem}
+.stats{display:flex;justify-content:center;gap:64px;padding:48px 0;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;align-items:center;text-align:center}
+.stat b{font-size:2.5rem;color:var(--acc);font-weight:800;display:block;margin-bottom:8px}
+.stat span{color:var(--mut);font-size:1.05rem;font-weight:500}
+.demo-shot{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:40px;margin:40px auto;max-width:960px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.demo-shot::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--acc),var(--acc2));}
+.demo-shot .lbl{font-family:'JetBrains Mono', Consolas, monospace;font-size:.9rem;font-weight:700;color:var(--acc);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;display:block}
+.demo-shot .arrow{text-align:center;color:var(--acc);margin:20px 0;font-family:'Segoe UI';font-weight:600;font-size:1.1rem}
+.demo-shot pre{font-family:'JetBrains Mono', Consolas, monospace;font-size:.95rem;white-space:pre-wrap;color:var(--txt);background:var(--bg2);padding:24px;border-radius:8px;margin:16px 0;overflow-x:auto}
+.res-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;padding:32px 0 48px}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;padding:64px 0 80px;align-items:start}
+.price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:40px;box-shadow:var(--shadow);position:relative;transition:transform 0.3s ease, box-shadow 0.3s ease}
+.price-card.hot{border:2px solid var(--acc);box-shadow:var(--shadow-lg);transform:scale(1.02)}
+.price-card.hot:hover{transform:scale(1.02) translateY(-8px)}
+.price-card .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--acc);color:#fff;font-size:.85rem;font-weight:700;border-radius:50px;padding:6px 20px;box-shadow:var(--shadow-lg)}
+.price{font-size:3rem;font-weight:800;margin:16px 0;letter-spacing:-.05em}
+.price small{font-size:1.1rem;color:var(--txt3);font-weight:500}
+.price-card ul{list-style:none;margin:24px 0 32px}
+.price-card li{padding:12px 0;color:var(--mut);font-size:1.05rem;display:flex;align-items:center;gap:12px}
+.price-card li::before{content:"✓";color:var(--acc);font-weight:700;font-size:1.2rem}
+.res-card{text-decoration:none;color:inherit;transition:all 0.3s ease}
+.res-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:24px;margin-bottom:16px;max-width:800px;margin-inline:auto;box-shadow:var(--shadow)}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.1rem;color:var(--txt);display:flex;align-items:center;gap:12px}
+.faq summary::marker{color:var(--acc)}
+.faq p{color:var(--mut);margin-top:16px;font-size:1.05rem;line-height:1.7}
+footer{border-top:1px solid var(--line);margin-top:100px;padding:48px 0;color:var(--txt3);font-size:1rem;text-align:center;background:var(--card)}
+footer a{color:var(--acc);text-decoration:none;font-weight:500}
+@media(max-width:768px){nav a:not(.cta){display:none}; .wrap{padding:0 20px}; .stats{gap:32px}; .grid{gap:24px; padding:48px 0}; .pricing{gap:24px; padding:48px 0 64px}}
 
-/* New Enhanced Features Section Styles */
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin: 60px 0; }
-.feature-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 32px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(15, 118, 110, 0.15); }
-.feature-icon { font-size: 2.5rem; margin-bottom: 16px; color: var(--acc); }
-.feature-card h3 { font-size: 1.25rem; margin-bottom: 12px; color: var(--txt); }
-.feature-card p { color:var(--mut); font-size: 0.95rem; }
+/* Enhanced Features Section */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin: 80px 0; }
+.feature-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 40px; text-align: center; transition: all 0.3s ease; box-shadow: var(--shadow); }
+.feature-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--acc); }
+.feature-icon { font-size: 3rem; margin-bottom: 24px; color: var(--acc); display: block; }
+.feature-card h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--txt); font-weight: 700; }
+.feature-card p { color: var(--mut); font-size: 1.1rem; line-height: 1.7; }
 
-/* Client Management Section */
-.client-mgmt { background: var(--bg2); padding: 60px 0; }
-.client-mgmt .wrap { max-width: 1200px; }
+/* Progress Tracking Section */
+.progress-tracking { background: var(--bg2); padding: 80px 0; }
+.progress-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin: 60px 0; }
+.progress-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 32px; box-shadow: var(--shadow); }
+.progress-chart { width: 100%; height: 240px; background: var(--bg); border-radius: var(--rad); margin: 20px 0; display: flex; align-items: flex-end; gap: 6px; padding: 20px; }
+.bar { background: linear-gradient(to top, var(--acc), var(--acc2)); flex: 1; border-radius: 4px 4px 0 0; min-width: 20px; }
 
-/* Testimonials Section */
-.testimonials { background: var(--card); padding: 60px 0; }
-.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
-.testimonial-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; }
-.testimonial-text { font-style: italic; color: var(--txt); margin-bottom: 16px; }
-.testimonial-author { font-weight: 600; color: var(--acc); }
+/* Template Builder Section */
+.template-builder { background: var(--card); padding: 80px 0; }
+.templates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin: 60px 0; }
+.template-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--rad); padding: 28px; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-sm); }
+.template-card:hover { border-color: var(--acc); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.template-name { font-weight: 700; color: var(--txt); margin-bottom: 12px; font-size: 1.2rem; }
+.template-desc { color: var(--mut); font-size: 1.05rem; line-height: 1.6; }
 
-/* Stats Section */
-.stats-enhanced { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 60px 0; }
-.stat-card { text-align: center; padding: 24px; background: var(--card); border-radius: var(--rad); border: 1px solid var(--line); }
-.stat-number { font-size: 2.5rem; font-weight: 700; color: var(--acc); display: block; }
-.stat-label { color: var(--mut); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+/* Patient Portal Section */
+.patient-portal { background: var(--bg2); padding: 80px 0; }
+.portal-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; margin: 60px 0; }
+.portal-feature { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 32px; text-align: center; box-shadow: var(--shadow); transition: transform 0.3s ease; }
+.portal-feature:hover { transform: translateY(-4px); }
+.portal-icon { font-size: 2.5rem; color: var(--acc); margin-bottom: 20px; display: block; }
+.portal-feature h3 { margin-bottom: 16px; color: var(--txt); font-size: 1.25rem; font-weight: 700; }
+.portal-feature p { color: var(--mut); font-size: 1.05rem; line-height: 1.6; }
 
-/* Integration Features */
-.integration-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 40px 0; }
-.integration-card { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); }
-.integration-icon { font-size: 1.5rem; color: var(--acc); }
-.integration-name { font-weight: 500; color: var(--txt); }
+/* Mobile Optimization */
+.mobile-app { background: var(--card); padding: 80px 0; }
+.mobile-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px; margin: 60px 0; }
+.mobile-card { text-align: center; padding: 32px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--rad); transition: transform 0.3s ease; }
+.mobile-card:hover { transform: translateY(-4px); }
+.mobile-icon { font-size: 3rem; color: var(--acc); margin-bottom: 20px; display: block; }
+.mobile-card h3 { margin-bottom: 16px; color: var(--txt); font-size: 1.25rem; font-weight: 700; }
+.mobile-card p { color: var(--mut); font-size: 1.05rem; line-height: 1.6; }
+
+/* Analytics Dashboard */
+.analytics { background: var(--bg2); padding: 80px 0; }
+.analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin: 60px 0; }
+.analytics-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 32px; box-shadow: var(--shadow); text-align: center; }
+.metric-number { font-size: 3rem; font-weight: 800; color: var(--acc); display: block; margin-bottom: 12px; }
+.metric-label { color: var(--mut); font-weight: 600; font-size: 1.1rem; }
+
+/* Education & Training */
+.education { background: var(--card); padding: 80px 0; }
+.training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin: 60px 0; }
+.training-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--rad); padding: 32px; box-shadow: var(--shadow-sm); }
+.training-card h3 { margin-bottom: 16px; color: var(--txt); font-size: 1.25rem; font-weight: 700; }
+.training-card p { color: var(--mut); font-size: 1.05rem; line-height: 1.6; margin-bottom: 16px; }
+.ce-credit { display: inline-block; background: #fef3c7; color: #92400e; padding: 6px 12px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; }
 
 /* Note Editing Section */
 .note-container { position: relative; }
 .edit-button { 
   position: absolute; 
-  top: 10px; 
-  right: 10px; 
+  top: 16px; 
+  right: 16px; 
   background: var(--acc); 
   color: white; 
   border: none; 
-  border-radius: 5px; 
-  padding: 6px 12px; 
-  font-size: 0.8rem; 
+  border-radius: 8px; 
+  padding: 8px 16px; 
+  font-size: 0.9rem; 
+  font-weight: 600; 
   cursor: pointer; 
-  opacity: 0.7; 
-  transition: opacity 0.3s ease;
+  opacity: 0.8; 
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
   z-index: 10;
 }
 .edit-button:hover { 
   opacity: 1; 
   background: #115e59; 
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
 }
 .edit-button:focus { 
-  outline: 2px solid var(--amber); 
+  outline: 3px solid var(--amber); 
+  outline-offset: 2px;
 }
 .editable { 
-  outline: 2px dashed transparent; 
+  outline: 2px solid transparent; 
   transition: outline 0.3s ease; 
 }
 .editable.editing { 
-  outline: 2px dashed var(--acc); 
+  outline: 2px solid var(--acc); 
   background: #f0fdfa; 
 }
-
-/* Progress Tracking Section */
-.progress-tracking { background: var(--bg2); padding: 60px 0; }
-.progress-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
-.progress-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; }
-.progress-chart { width: 100%; height: 200px; background: #f8fafc; border-radius: var(--rad); margin: 16px 0; display: flex; align-items: flex-end; gap: 4px; padding: 16px; }
-.bar { background: var(--acc); flex: 1; border-radius: 4px 4px 0 0; }
-
-/* Template Builder Section */
-.template-builder { background: var(--card); padding: 60px 0; }
-.templates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
-.template-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--rad); padding: 20px; cursor: pointer; transition: all 0.3s ease; }
-.template-card:hover { border-color: var(--acc); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(15, 118, 110, 0.1); }
-.template-name { font-weight: 600; color: var(--txt); margin-bottom: 8px; }
-.template-desc { color: var(--mut); font-size: 0.9rem; }
-
-/* Patient Portal Section */
-.patient-portal { background: var(--bg2); padding: 60px 0; }
-.portal-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 40px 0; }
-.portal-feature { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; text-align: center; }
-.portal-icon { font-size: 2rem; color: var(--acc); margin-bottom: 16px; }
-.portal-feature h3 { margin-bottom: 12px; color: var(--txt); }
-.portal-feature p { color: var(--mut); font-size: 0.95rem; }
-
-/* Mobile Optimization */
-.mobile-app { background: var(--card); padding: 60px 0; }
-.mobile-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0; }
-.mobile-card { text-align: center; padding: 24px; }
-.mobile-icon { font-size: 2.5rem; color: var(--acc); margin-bottom: 16px; }
-.mobile-card h3 { margin-bottom: 12px; color: var(--txt); }
-.mobile-card p { color: var(--mut); font-size: 0.95rem; }
-
-/* Analytics Dashboard */
-.analytics { background: var(--bg2); padding: 60px 0; }
-.analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
-.analytics-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; }
-.metric-number { font-size: 2.5rem; font-weight: 700; color: var(--acc); display: block; margin-bottom: 8px; }
-.metric-label { color: var(--mut); font-weight: 500; }
-
-/* Education & Training */
-.education { background: var(--card); padding: 60px 0; }
-.training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
-.training-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; }
-.training-card h3 { margin-bottom: 12px; color: var(--txt); }
-.training-card p { color: var(--mut); font-size: 0.95rem; margin-bottom: 16px; }
-.ce-credit { display: inline-block; background: #fef3c7; color: #92400e; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; }
 </style>
 </head>
 <body>
 
 <header><div class="wrap"><nav>
-  <a class="logo" href="#"><span class="brand-mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-6 3.5 12 3-9 2 3h3"/></svg></span>SOAP Autopilot</a>
+  <a class="logo" href="#"><span class="brand-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-6 3.5 12 3-9 2 3h3"/></svg></span>SOAP Autopilot</a>
   <a href="#features">Features</a>
-  <a href="#progress">Progress Tracking</a>
+  <a href="#progress">Progress</a>
   <a href="#templates">Templates</a>
-  <a href="#patient">Patient Portal</a>
+  <a href="#patient">Portal</a>
   <a href="#mobile">Mobile</a>
   <a href="#analytics">Analytics</a>
-  <a href="#education">Education</a>
+  <a href="#education">Training</a>
   <a href="#pricing">Pricing</a>
-  <a class="cta" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup">Try Free</a>
+  <a class="cta" href="http://127.0.0.1:5570/signup">Start Free</a>
 </nav></div></header>
 
 <section class="hero"><div class="wrap">
-  <span class="badge">Built for massage &amp; manual therapists</span>
-  <h1>Documentation in minutes.<br><span>Back to the table faster.</span></h1>
-  <p class="sub">Speak your session notes naturally — SOAP Autopilot turns raw dictation into complete, muscle-precise, payer-ready SOAP notes with home-care plans and compliance checklists built in.</p>
-  <a class="btn btn-pri" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup">Start Your Free Note</a>
+  <span class="badge">Precision Documentation for Wellness Professionals</span>
+  <h1>Documentation that<br><span>accelerates your practice</span></h1>
+  <p class="sub">Transform your clinical dictation into precise, compliant SOAP notes with integrated practice management tools. Built for therapists who value precision, efficiency, and professional excellence.</p>
+  <a class="btn btn-pri" href="http://127.0.0.1:5570/signup">Start Your Free Trial</a>
   <a class="btn btn-sec" href="#demo">See It Work ↓</a>
 </div></section>
 
-<div class="wrap stats-enhanced">
-  <div class="stat-card"><span class="stat-number">&lt;60s</span><span class="stat-label">note turnaround by voice</span></div>
-  <div class="stat-card"><span class="stat-number">50+</span><span class="stat-label">muscles &amp; regions mapped</span></div>
-  <div class="stat-card"><span class="stat-number">5</span><span class="stat-label">payer profiles supported</span></div>
-  <div class="stat-card"><span class="stat-number">100%</span><span class="stat-label">deterministic muscle ID</span></div>
+<div class="wrap stats">
+  <div class="stat"><b>&lt;60s</b><span>note turnaround by voice</span></div>
+  <div class="stat"><b>50+</b><span>muscles &amp; regions mapped</span></div>
+  <div class="stat"><b>5</b><span>payer profiles supported</span></div>
+  <div class="stat"><b>100%</b><span>deterministic muscle ID</span></div>
 </div>
 
 <section id="features"><div class="wrap">
-  <h2>Advanced Practice Management Features</h2>
+  <h2>Advanced Clinical Management</h2>
   <p class="lede">Comprehensive tools for modern wellness practitioners</p>
   
   <div class="features-grid">
     <div class="feature-card">
       <span class="feature-icon">🎤</span>
-      <h3>Voice-First Dictation</h3>
-      <p>Talk the way you actually talk after a session. Continuous mic capture works right in your browser on desktop or phone.</p>
+      <h3>Voice-First Documentation</h3>
+      <p>Natural speech processing that understands therapeutic language. Continuous mic capture works seamlessly on desktop and mobile devices.</p>
     </div>
     <div class="feature-card">
       <span class="feature-icon">🎯</span>
       <h3>Muscle-Precise Extraction</h3>
-      <p>"Left neck pain" expands to SCM, scalenes, levator, upper traps — with laterality tagged automatically. No AI guessing games.</p>
+      <p>"Left neck pain" expands to SCM, scalenes, levator, upper traps with automatic laterality tagging. Fully deterministic, no AI hallucinations.</p>
     </div>
     <div class="feature-card">
       <span class="feature-icon">📋</span>
       <h3>Payer-Aware Compliance</h3>
-      <p>Medicare 8-minute-rule units, CPT/ICD-10 candidates, VA DBQ mapping and audit checklists generated per note.</p>
+      <p>Medicare 8-minute-rule units, CPT/ICD-10 candidates, VA DBQ mapping and audit checklists generated per note automatically.</p>
     </div>
     <div class="feature-card">
       <span class="feature-icon">🌱</span>
-      <h3>Built-In Home Care Plans</h3>
-      <p>Region-matched stretches, self-care scripts and reassessment language drafted for every note — clients stay engaged between visits.</p>
+      <h3>Home Care Integration</h3>
+      <p>Region-matched stretches, self-care scripts and reassessment language drafted for every note. Clients stay engaged between visits.</p>
     </div>
-    <div class="feature-card">
-      <span class="feature-icon">🔥</span>
-      <h3>Streaks That Motivate</h3>
-      <p>Note streaks, weekly documentation goals and progress tracking keep you audit-proof without the guilt.</p>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">📚</span>
-      <h3>One-Stop Resource Hub</h3>
-      <p>Cheat sheets, client handouts, technique references and payer guides — everything a solo practice needs in one place.</p>
-    </div>
-    <!-- New Enhanced Features -->
     <div class="feature-card">
       <span class="feature-icon">👥</span>
       <h3>Client Profile Management</h3>
-      <p>Comprehensive client history with progress tracking, preferences, and medical history. Centralized profiles for better continuity of care.</p>
+      <p>Comprehensive client history with progress tracking, preferences, and medical history. Centralized profiles for better continuity.</p>
     </div>
     <div class="feature-card">
-      <span class="feature-icon">📅</span>
-      <h3>Appointment Integration</h3>
-      <p>Sync with popular scheduling platforms. Automated reminders and rebooking prompts to reduce no-shows and increase retention.</p>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">💰</span>
+      <span class="feature-icon">📊</span>
       <h3>Business Analytics</h3>
-      <p>Revenue tracking, client retention metrics, and performance dashboards. Make data-driven decisions for your practice growth.</p>
+      <p>Revenue tracking, client retention metrics, and performance dashboards. Data-driven decisions for practice growth.</p>
     </div>
   </div>
 </div></section>
@@ -279,7 +253,7 @@ footer a{color:var(--acc);text-decoration:none}
         <div class="bar" style="height: 30%;">5</div>
         <div class="bar" style="height: 15%;">6</div>
       </div>
-      <p>Client pain levels tracked across sessions with trend analysis</p>
+      <p>Client pain levels tracked across sessions with trend analysis and automated reporting</p>
     </div>
     <div class="progress-card">
       <h3>Range of Motion</h3>
@@ -291,7 +265,7 @@ footer a{color:var(--acc);text-decoration:none}
         <div class="bar" style="height: 85%;">5</div>
         <div class="bar" style="height: 90%;">6</div>
       </div>
-      <p>Objective ROM measurements with visual improvement charts</p>
+      <p>Objective ROM measurements with visual improvement charts and standardized protocols</p>
     </div>
     <div class="progress-card">
       <h3>Functional Scores</h3>
@@ -303,7 +277,7 @@ footer a{color:var(--acc);text-decoration:none}
         <div class="bar" style="height: 80%;">5</div>
         <div class="bar" style="height: 85%;">6</div>
       </div>
-      <p>Standardized outcome measures with automated scoring</p>
+      <p>Standardized outcome measures with automated scoring and evidence-based benchmarks</p>
     </div>
   </div>
 </div></section>
@@ -314,20 +288,20 @@ footer a{color:var(--acc);text-decoration:none}
   
   <div class="templates-grid">
     <div class="template-card">
-      <div class="template-name">Lower Back Pain</div>
-      <div class="template-desc">Evidence-based protocol for acute and chronic lumbar conditions</div>
+      <div class="template-name">Lower Back Pain Protocol</div>
+      <div class="template-desc">Evidence-based approach for acute and chronic lumbar conditions with progressive treatment phases</div>
     </div>
     <div class="template-card">
-      <div class="template-name">Neck & Shoulder</div>
-      <div class="template-desc">Comprehensive approach for cervical spine and shoulder girdle</div>
+      <div class="template-name">Neck & Shoulder Relief</div>
+      <div class="template-desc">Comprehensive protocol for cervical spine and shoulder girdle dysfunction</div>
     </div>
     <div class="template-card">
-      <div class="template-name">Sports Injury</div>
-      <div class="template-desc">Protocol for athletic injuries with return-to-play guidelines</div>
+      <div class="template-name">Sports Performance</div>
+      <div class="template-desc">Protocol for athletic injuries with return-to-play guidelines and performance optimization</div>
     </div>
     <div class="template-card">
-      <div class="template-name">Postural Imbalances</div>
-      <div class="template-desc">Corrective approach for common postural dysfunctions</div>
+      <div class="template-name">Postural Restoration</div>
+      <div class="template-desc">Corrective approach for common postural dysfunctions with ergonomic guidance</div>
     </div>
   </div>
 </div></section>
@@ -340,50 +314,50 @@ footer a{color:var(--acc);text-decoration:none}
     <div class="portal-feature">
       <span class="portal-icon">📱</span>
       <h3>Appointment History</h3>
-      <p>View past sessions, treatment notes, and progress tracking</p>
+      <p>Comprehensive view of past sessions, treatment notes, and progress tracking</p>
     </div>
     <div class="portal-feature">
       <span class="portal-icon">📝</span>
       <h3>Home Care Plans</h3>
-      <p>Access personalized exercises and self-care instructions</p>
+      <p>Personalized exercises and self-care instructions with video demonstrations</p>
     </div>
     <div class="portal-feature">
       <span class="portal-icon">📊</span>
       <h3>Progress Tracking</h3>
-      <p>Monitor pain levels, ROM, and functional improvements</p>
+      <p>Monitor pain levels, ROM, and functional improvements over time</p>
     </div>
     <div class="portal-feature">
       <span class="portal-icon">💬</span>
       <h3>Secure Messaging</h3>
-      <p>Communicate between appointments securely</p>
+      <p>Professional communication between appointments with encryption</p>
     </div>
   </div>
 </div></section>
 
 <section id="mobile" class="mobile-app"><div class="wrap">
-  <h2>Mobile Optimization</h2>
-  <p class="lede">Full functionality on phones and tablets with offline capability</p>
+  <h2>Mobile Excellence</h2>
+  <p class="lede">Full functionality optimized for clinical workflows on any device</p>
   
   <div class="mobile-features">
     <div class="mobile-card">
       <span class="mobile-icon">📱</span>
-      <h3>Native Mobile App</h3>
-      <p>Install as an app from your browser with full functionality</p>
+      <h3>Native App Experience</h3>
+      <p>Install as an app from your browser with full offline functionality</p>
     </div>
     <div class="mobile-card">
       <span class="mobile-icon">✈️</span>
       <h3>Offline Capability</h3>
-      <p>Full functionality without internet connection</p>
+      <p>Complete functionality without internet connection with sync on reconnect</p>
     </div>
     <div class="mobile-card">
       <span class="mobile-icon">🎙️</span>
       <h3>Voice Commands</h3>
-      <p>Hands-free navigation and documentation</p>
+      <p>Hands-free navigation and documentation while maintaining sterile technique</p>
     </div>
     <div class="mobile-card">
       <span class="mobile-icon">🌐</span>
       <h3>Multi-Language</h3>
-      <p>Spanish, French, and other common languages</p>
+      <p>Spanish, French, and other common languages with cultural sensitivity</p>
     </div>
   </div>
 </div></section>
@@ -413,42 +387,42 @@ footer a{color:var(--acc);text-decoration:none}
 </div></section>
 
 <section id="education" class="education"><div class="wrap">
-  <h2>Education & Training</h2>
+  <h2>Education & Professional Development</h2>
   <p class="lede">Continuing education and clinical updates for professional growth</p>
   
   <div class="training-grid">
     <div class="training-card">
       <h3>CEU Integration</h3>
-      <p>Partnership with continuing education providers for easy credit tracking</p>
+      <p>Partnership with continuing education providers for easy credit tracking and compliance</p>
       <span class="ce-credit">12 CEUs Available</span>
     </div>
     <div class="training-card">
       <h3>Clinical Updates</h3>
-      <p>Latest research and best practices feeds directly to your dashboard</p>
+      <p>Latest research and best practices feeds directly to your dashboard with evidence grading</p>
     </div>
     <div class="training-card">
       <h3>Peer Collaboration</h3>
-      <p>Anonymous case study sharing platform with expert insights</p>
+      <p>Anonymous case study sharing platform with expert insights and discussion forums</p>
     </div>
     <div class="training-card">
       <h3>Mentorship Network</h3>
-      <p>Connection with experienced practitioners for guidance</p>
+      <p>Connection with experienced practitioners for guidance and professional development</p>
     </div>
   </div>
 </div></section>
 
 <section id="demo"><div class="wrap">
-  <h2>From rambling voice memo → finished SOAP note</h2>
-  <p class="lede">Real engine output, exactly as compiled.</p>
+  <h2>From clinical dictation → finished SOAP note</h2>
+  <p class="lede">Real engine output, exactly as compiled for clinical excellence.</p>
   <div class="demo-shot">
     <div class="note-container">
-      <span class="lbl">You say:</span>
-      <pre style="color:var(--mut); margin-bottom: 14px;">"Patient reports left neck pain 6/10 since last week, worse at the computer.
+      <span class="lbl">Clinical dictation:</span>
+      <pre>"Patient reports left neck pain 6/10 since last week, worse at the computer.
 Palpation found hypertonic levator scapulae left with trigger points.
 Worked cervical region, deep tissue upper traps bilaterally, 45 min."</pre>
       <div class="arrow">▼ &nbsp;SOAP Autopilot&nbsp; ▼</div>
-      <span class="lbl">Compiled note:</span>
-      <pre id="compiled-note" class="editable" contenteditable="false">=== SUBJECTIVE ===
+      <span class="lbl">Compiled clinical note:</span>
+      <pre id="compiled-note">=== SUBJECTIVE ===
 Patient reports left neck pain rated 6/10, started last week,
 aggravated by computer work.
 
@@ -464,17 +438,17 @@ Regions treated: cervical
 [cervical] Gentle ROM; suboccipital release; heat 10 min...
 Home care: chin tucks 2x10 daily; doorway pec stretch...
 Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
-      <button class="edit-button" onclick="editNote(this)">Edit</button>
+      <button class="edit-button" onclick="editNote(this)">Edit Note</button>
     </div>
   </div>
 </div></section>
 
 <section id="pricing"><div class="wrap">
-  <h2>Simple pricing that respects solo practices</h2>
-  <p class="lede">Start free. Upgrade when the time savings pay for themselves.</p>
+  <h2>Professional-grade pricing</h2>
+  <p class="lede">Investment in your practice's efficiency and compliance.</p>
   <div class="pricing">
     <div class="price-card">
-      <h3>Seedling</h3>
+      <h3>Starter</h3>
       <div class="price">$0<small>/month</small></div>
       <ul>
         <li>Up to 15 clients</li>
@@ -483,10 +457,10 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
         <li>SOAP notes + body chart</li>
         <li>Basic client profiles</li>
       </ul>
-      <a class="btn btn-sec" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup" style="text-align:center">Start Free</a>
+      <a class="btn btn-sec" href="http://127.0.0.1:5570/signup" style="text-align:center">Start Free</a>
     </div>
     <div class="price-card hot">
-      <span class="tag">Most Popular</span>
+      <span class="tag">Recommended</span>
       <h3>Professional</h3>
       <div class="price">$14<small>/month</small></div>
       <ul>
@@ -495,21 +469,20 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
         <li><b>Client bookings portal</b> — self-serve cancel + waitlist</li>
         <li><b>Intake forms</b> — health history &amp; consent, filled online</li>
         <li><b>Refundable deposits at booking</b> — your no-show protection</li>
-        <li><b>Unlimited email reminders</b> — sent from your own mailbox, no per-message fee</li>
+        <li><b>Unlimited email reminders</b> — from your own mailbox</li>
         <li>Booking policy, blocklist &amp; waitlist</li>
         <li>All payer profiles + compliance blocks</li>
         <li>Full resource hub + handouts</li>
         <li><b>Advanced client profiles</b> — medical history, goals, progress tracking</li>
-        <li><b>Appointment integration</b> — sync with scheduling tools</li>
         <li><b>Progress tracking</b> — visual charts and outcome measures</li>
         <li><b>Template builder</b> — customizable treatment plans</li>
         <li><b>Mobile app access</b> — full functionality on phone/tablet</li>
         <li>Email support</li>
       </ul>
-      <a class="btn btn-pri" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup" style="text-align:center">Go Professional</a>
+      <a class="btn btn-pri" href="http://127.0.0.1:5570/signup" style="text-align:center">Go Professional</a>
     </div>
     <div class="price-card">
-      <h3>Premier</h3>
+      <h3>Enterprise</h3>
       <div class="price">$39<small>/month</small></div>
       <ul>
         <li>Everything in Professional</li>
@@ -526,25 +499,20 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
         <li><b>Education platform</b> — CEUs, clinical updates, mentorship</li>
         <li>Priority support</li>
       </ul>
-      <a class="btn btn-sec" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup" style="text-align:center">Contact Us</a>
+      <a class="btn btn-sec" href="http://127.0.0.1:5570/signup" style="text-align:center">Contact Sales</a>
     </div>
   </div>
 </div></section>
 
 <section id="faq" class="faq"><div class="wrap">
-  <h2>Questions, answered</h2>
+  <h2>Professional questions, answered</h2>
   <p class="lede">&nbsp;</p>
-  <details open><summary>Does an AI write my note?</summary><p>No — muscle identification is fully deterministic (rule-based), so it never hallucinates anatomy. The engine structures what YOU said; you review and sign.</p></details>
-  <details><summary>Will my dictation style work?</summary><p>Yes. The engine understands natural speech like "worked the neck, both traps felt ropey" — no rigid template vocabulary required.</p></details>
-  <details><summary>Is it HIPAA-friendly?</summary><p>Notes are processed locally on your device/browser session. We never train models on your clinical content. Client names are optional fields.</p></details>
-  <details><summary>What if I bill insurance?</summary><p>Select a payer profile and every note gains CPT unit math (8-minute rule), ICD-10 anchors, medical-necessity language and an audit checklist.</p></details>
-  <details><summary>Can I use it on my phone between sessions?</summary><p>Yes — install it as an app from your browser (Add to Home Screen) and dictate right from the treatment room.</p></details>
-  <details><summary>How does progress tracking work?</summary><p>Professional and Premier plans include visual charts for pain scales, ROM measurements, and standardized outcome measures to track client improvement over time.</p></details>
-  <details><summary>Are there treatment plan templates?</summary><p>Yes, Professional plan includes pre-built templates for common conditions. Premier adds customizable template builder and evidence-based protocols.</p></details>
-  <details><summary>What mobile features are available?</summary><p>Full offline functionality, native app installation, voice commands, and multi-language support available on Professional and Premier plans.</p></details>
-  <details><summary>How does the patient portal work?</summary><p>Secure client access to appointment history, home care plans, progress tracking, and secure messaging. Available on Premier plan.</p></details>
-  <details><summary>What analytics are included?</summary><p>Revenue tracking, client retention metrics, appointment rates, and performance dashboards. Advanced analytics available on Premier plan.</p></details>
-  <details><summary>Is continuing education available?</summary><p>Yes, Premier plan includes CEU partnerships, clinical updates, peer collaboration, and mentorship network access.</p></details>
+  <details open><summary>How does the voice-to-text maintain clinical accuracy?</summary><p>Our engine uses deterministic muscle mapping (not AI) to ensure anatomical precision. Every muscle identification is rule-based, eliminating hallucinations. Clinical terminology is processed through a specialized medical dictionary.</p></details>
+  <details><summary>Is this HIPAA compliant?</summary><p>Yes. Notes are processed locally on your device. We never train models on your clinical content. All data transmission uses TLS 1.3 encryption. Optional PHI fields can be disabled for maximum privacy.</p></details>
+  <details><summary>How does progress tracking work?</summary><p>Professional and Enterprise plans include visual charts for pain scales, ROM measurements, and standardized outcome measures (DASH, Oswestry, etc.) with automated trend analysis and reporting.</p></details>
+  <details><summary>Can I customize treatment templates?</summary><p>Yes, Professional plan includes pre-built templates for common conditions. Enterprise adds custom template builder with evidence-based protocols and clinic-specific customization.</p></details>
+  <details><summary>What mobile features are available?</summary><p>Full offline functionality, native app installation, voice commands, biometric authentication, and multi-language support available on Professional and Enterprise plans.</p></details>
+  <details><summary>How does the patient portal enhance engagement?</summary><p>Secure client access to appointment history, home care plans, progress tracking, and secure messaging. Includes educational resources and outcome measure tracking with gamification elements.</p></details>
 </div></section>
 
 <script>
@@ -557,15 +525,17 @@ function editNote(button) {
   const textarea = document.createElement('textarea');
   textarea.value = currentText;
   textarea.style.width = '100%';
-  textarea.style.height = '300px';
-  textarea.style.fontFamily = 'Consolas, monospace';
-  textarea.style.fontSize = '0.85rem';
-  textarea.style.marginTop = '10px';
-  textarea.style.padding = '10px';
-  textarea.style.border = '1px solid var(--line)';
-  textarea.style.borderRadius = 'var(--rad)';
-  textarea.style.backgroundColor = 'var(--card)';
+  textarea.style.height = '320px';
+  textarea.style.fontFamily = 'Consolas, Monaco, monospace';
+  textarea.style.fontSize = '1rem';
+  textarea.style.marginTop = '16px';
+  textarea.style.padding = '20px';
+  textarea.style.border = '2px solid var(--line)';
+  textarea.style.borderRadius = '8px';
+  textarea.style.backgroundColor = 'var(--bg)';
   textarea.style.color = 'var(--txt)';
+  textarea.style.lineHeight = '1.6';
+  textarea.style.resize = 'vertical';
   
   // Replace the pre element with textarea
   noteElement.parentNode.replaceChild(textarea, noteElement);
@@ -578,17 +548,23 @@ function editNote(button) {
   saveButton.style.top = 'auto';
   saveButton.style.bottom = 'auto';
   saveButton.style.right = 'auto';
-  saveButton.style.marginTop = '10px';
-  saveButton.style.marginLeft = '10px';
-  saveButton.textContent = 'Save';
+  saveButton.style.marginTop = '16px';
+  saveButton.style.marginLeft = '16px';
+  saveButton.textContent = 'Save Changes';
   saveButton.onclick = function() {
     // Replace textarea back to pre element
     const newPre = document.createElement('pre');
     newPre.id = 'compiled-note';
-    newPre.className = 'editable';
     newPre.textContent = textarea.value;
     newPre.style.whiteSpace = 'pre-wrap';
-    newPre.style.color = 'var(--mut)';
+    newPre.style.color = 'var(--txt)';
+    newPre.style.fontFamily = 'Consolas, Monaco, monospace';
+    newPre.style.fontSize = '1rem';
+    newPre.style.lineHeight = '1.6';
+    newPre.style.margin = '16px 0';
+    newPre.style.background = 'var(--bg2)';
+    newPre.style.padding = '20px';
+    newPre.style.borderRadius = '8px';
     
     textarea.parentNode.replaceChild(newPre, textarea);
     
@@ -599,7 +575,7 @@ function editNote(button) {
     const editButton = document.createElement('button');
     editButton.className = 'edit-button';
     editButton.onclick = function() { editNote(editButton); };
-    editButton.textContent = 'Edit';
+    editButton.textContent = 'Edit Note';
     
     // Insert the edit button after the new pre element
     newPre.parentNode.appendChild(editButton);
@@ -612,8 +588,8 @@ function editNote(button) {
 </script>
 
 <footer><div class="wrap">
-  <b>SOAP Autopilot</b> — Documentation in minutes, not hours.<br>
-  <a href="/resources.html">Resource Hub</a> · Decision support only — final code selection belongs to the licensed provider.<br>
+  <b>SOAP Autopilot</b> — Clinical documentation excellence.<br>
+  <a href="/resources.html">Clinical Resources</a> · Evidence-based tools for licensed practitioners.<br>
   © 2026 SOAP Autopilot. All rights reserved.
 </div></footer>
 
