@@ -46,7 +46,7 @@ section .lede{text-align:center;color:var(--mut);margin-bottom:8px}
 .stats{display:flex;justify-content:center;gap:48px;padding:32px 0;flex-wrap:wrap}
 .stat b{font-size:2rem;color:var(--acc);display:block;text-align:center}
 .stat span{color:var(--mut);font-size:.9rem}
-.demo-shot{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:34px;margin:28px auto;max-width:860px;font-family:Consolas,monospace;font-size:.85rem;box-shadow:0 1px 3px rgba(28,25,23,.06)}
+.demo-shot{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:34px;margin:28px auto;max-width:860px;font-family:Consolas,monospace;font-size:.85rem;box-shadow:0 1px 3px rgba(28,25,23,.06);position:relative}
 .demo-shot .lbl{font-family:'Segoe UI';color:var(--acc);font-weight:700;font-size:.76rem;text-transform:uppercase;letter-spacing:.1em}
 .demo-shot .arrow{text-align:center;color:var(--acc);margin:14px 0;font-family:'Segoe UI'}
 .demo-shot pre{white-space:pre-wrap;color:var(--mut)}
@@ -75,7 +75,7 @@ footer a{color:var(--acc);text-decoration:none}
 .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(15, 118, 110, 0.15); }
 .feature-icon { font-size: 2.5rem; margin-bottom: 16px; color: var(--acc); }
 .feature-card h3 { font-size: 1.25rem; margin-bottom: 12px; color: var(--txt); }
-.feature-card p { color: var(--mut); font-size: 0.95rem; }
+.feature-card p { color:var(--mut); font-size: 0.95rem; }
 
 /* Client Management Section */
 .client-mgmt { background: var(--bg2); padding: 60px 0; }
@@ -99,6 +99,29 @@ footer a{color:var(--acc);text-decoration:none}
 .integration-card { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); }
 .integration-icon { font-size: 1.5rem; color: var(--acc); }
 .integration-name { font-weight: 500; color: var(--txt); }
+
+/* Edit Button Styles */
+.edit-button { 
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
+  background: var(--acc); 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 6px 12px; 
+  font-size: 0.8rem; 
+  cursor: pointer; 
+  opacity: 0.7; 
+  transition: opacity 0.3s ease; 
+}
+.edit-button:hover { 
+  opacity: 1; 
+  background: #115e59; 
+}
+.edit-button:focus { 
+  outline: 2px solid var(--amber); 
+}
 </style>
 </head>
 <body>
@@ -224,7 +247,7 @@ Palpation found hypertonic levator scapulae left with trigger points.
 Worked cervical region, deep tissue upper traps bilaterally, 45 min."</pre>
     <div class="arrow">▼ &nbsp;SOAP Autopilot&nbsp; ▼</div>
     <span class="lbl">Compiled note:</span>
-    <pre>=== SUBJECTIVE ===
+    <pre id="compiled-note">=== SUBJECTIVE ===
 Patient reports left neck pain rated 6/10, started last week,
 aggravated by computer work.
 
@@ -240,6 +263,7 @@ Regions treated: cervical
 [cervical] Gentle ROM; suboccipital release; heat 10 min...
 Home care: chin tucks 2x10 daily; doorway pec stretch...
 Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
+    <button class="edit-button" onclick="editNote()">Edit</button>
   </div>
 </div></section>
 
@@ -330,6 +354,57 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
   <details><summary>What integrations are available?</summary><p>We integrate with major scheduling platforms, payment processors, and practice management systems. API access available on Premier plan.</p></details>
 </div></section>
 
+<script>
+function editNote() {
+  const noteElement = document.getElementById('compiled-note');
+  const currentText = noteElement.textContent || noteElement.innerText;
+  
+  // Create a textarea for editing
+  const textarea = document.createElement('textarea');
+  textarea.value = currentText;
+  textarea.style.width = '100%';
+  textarea.style.height = '300px';
+  textarea.style.fontFamily = 'Consolas, monospace';
+  textarea.style.fontSize = '0.85rem';
+  textarea.style.marginTop = '10px';
+  textarea.style.padding = '10px';
+  textarea.style.border = '1px solid var(--line)';
+  textarea.style.borderRadius = 'var(--rad)';
+  
+  // Replace the pre element with textarea
+  noteElement.parentNode.replaceChild(textarea, noteElement);
+  textarea.focus();
+  
+  // Create save button
+  const saveButton = document.createElement('button');
+  saveButton.className = 'edit-button';
+  saveButton.style.top = 'auto';
+  saveButton.style.bottom = '10px';
+  saveButton.style.right = '10px';
+  saveButton.textContent = 'Save';
+  saveButton.onclick = function() {
+    // Replace textarea back to pre element
+    const newPre = document.createElement('pre');
+    newPre.id = 'compiled-note';
+    newPre.textContent = textarea.value;
+    textarea.parentNode.replaceChild(newPre, textarea);
+    
+    // Remove the save button
+    saveButton.remove();
+    
+    // Add the edit button back
+    const editButton = document.createElement('button');
+    editButton.className = 'edit-button';
+    editButton.onclick = editNote;
+    editButton.textContent = 'Edit';
+    newPre.parentNode.appendChild(editButton);
+  };
+  
+  // Add save button next to the textarea
+  noteElement.parentNode.appendChild(saveButton);
+}
+</script>
+
 <footer><div class="wrap">
   <b>SOAP Autopilot</b> — Documentation in minutes, not hours.<br>
   <a href="/resources.html">Resource Hub</a> · Decision support only — final code selection belongs to the licensed provider.<br>
@@ -338,4 +413,3 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
 
 </body>
 </html>
-<!-- Force rebuild on 994695764990232441 -->
