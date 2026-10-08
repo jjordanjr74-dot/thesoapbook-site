@@ -100,7 +100,8 @@ footer a{color:var(--acc);text-decoration:none}
 .integration-icon { font-size: 1.5rem; color: var(--acc); }
 .integration-name { font-weight: 500; color: var(--txt); }
 
-/* Edit Button Styles */
+/* Edit Button Styles - FIXED POSITIONING */
+.note-container { position: relative; }
 .edit-button { 
   position: absolute; 
   top: 10px; 
@@ -113,7 +114,8 @@ footer a{color:var(--acc);text-decoration:none}
   font-size: 0.8rem; 
   cursor: pointer; 
   opacity: 0.7; 
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease, background 0.3s ease; 
+  z-index: 10;
 }
 .edit-button:hover { 
   opacity: 1; 
@@ -247,7 +249,8 @@ Palpation found hypertonic levator scapulae left with trigger points.
 Worked cervical region, deep tissue upper traps bilaterally, 45 min."</pre>
     <div class="arrow">▼ &nbsp;SOAP Autopilot&nbsp; ▼</div>
     <span class="lbl">Compiled note:</span>
-    <pre id="compiled-note">=== SUBJECTIVE ===
+    <div class="note-container">
+      <pre id="compiled-note">=== SUBJECTIVE ===
 Patient reports left neck pain rated 6/10, started last week,
 aggravated by computer work.
 
@@ -263,7 +266,8 @@ Regions treated: cervical
 [cervical] Gentle ROM; suboccipital release; heat 10 min...
 Home care: chin tucks 2x10 daily; doorway pec stretch...
 Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
-    <button class="edit-button" onclick="editNote()">Edit</button>
+      <button class="edit-button" onclick="editNote()">Edit</button>
+    </div>
   </div>
 </div></section>
 
@@ -370,24 +374,33 @@ function editNote() {
   textarea.style.padding = '10px';
   textarea.style.border = '1px solid var(--line)';
   textarea.style.borderRadius = 'var(--rad)';
+  textarea.style.backgroundColor = 'var(--card)';
+  textarea.style.color = 'var(--txt)';
   
   // Replace the pre element with textarea
-  noteElement.parentNode.replaceChild(textarea, noteElement);
+  const parentDiv = noteElement.parentElement;
+  parentDiv.replaceChild(textarea, noteElement);
   textarea.focus();
   
   // Create save button
   const saveButton = document.createElement('button');
   saveButton.className = 'edit-button';
+  saveButton.style.position = 'relative';
   saveButton.style.top = 'auto';
-  saveButton.style.bottom = '10px';
-  saveButton.style.right = '10px';
+  saveButton.style.bottom = 'auto';
+  saveButton.style.right = 'auto';
+  saveButton.style.marginTop = '10px';
+  saveButton.style.marginLeft = '10px';
   saveButton.textContent = 'Save';
   saveButton.onclick = function() {
     // Replace textarea back to pre element
     const newPre = document.createElement('pre');
     newPre.id = 'compiled-note';
     newPre.textContent = textarea.value;
-    textarea.parentNode.replaceChild(newPre, textarea);
+    newPre.style.whiteSpace = 'pre-wrap';
+    newPre.style.color = 'var(--mut)';
+    
+    textarea.parentElement.replaceChild(newPre, textarea);
     
     // Remove the save button
     saveButton.remove();
@@ -397,11 +410,14 @@ function editNote() {
     editButton.className = 'edit-button';
     editButton.onclick = editNote;
     editButton.textContent = 'Edit';
-    newPre.parentNode.appendChild(editButton);
+    
+    // Insert the edit button after the new pre element
+    textarea.parentElement.insertBefore(editButton, newPre.nextSibling);
   };
   
   // Add save button next to the textarea
-  noteElement.parentNode.appendChild(saveButton);
+  parentDiv.appendChild(document.createTextNode(' ')); // Add space
+  parentDiv.appendChild(saveButton);
 }
 </script>
 
