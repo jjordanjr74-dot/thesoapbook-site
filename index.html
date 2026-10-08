@@ -100,7 +100,7 @@ footer a{color:var(--acc);text-decoration:none}
 .integration-icon { font-size: 1.5rem; color: var(--acc); }
 .integration-name { font-weight: 500; color: var(--txt); }
 
-/* Edit Button Styles - FIXED POSITIONING */
+/* Note Editing Section */
 .note-container { position: relative; }
 .edit-button { 
   position: absolute; 
@@ -114,7 +114,7 @@ footer a{color:var(--acc);text-decoration:none}
   font-size: 0.8rem; 
   cursor: pointer; 
   opacity: 0.7; 
-  transition: opacity 0.3s ease, background 0.3s ease; 
+  transition: opacity 0.3s ease;
   z-index: 10;
 }
 .edit-button:hover { 
@@ -124,6 +124,60 @@ footer a{color:var(--acc);text-decoration:none}
 .edit-button:focus { 
   outline: 2px solid var(--amber); 
 }
+.editable { 
+  outline: 2px dashed transparent; 
+  transition: outline 0.3s ease; 
+}
+.editable.editing { 
+  outline: 2px dashed var(--acc); 
+  background: #f0fdfa; 
+}
+
+/* Progress Tracking Section */
+.progress-tracking { background: var(--bg2); padding: 60px 0; }
+.progress-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
+.progress-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; }
+.progress-chart { width: 100%; height: 200px; background: #f8fafc; border-radius: var(--rad); margin: 16px 0; display: flex; align-items: flex-end; gap: 4px; padding: 16px; }
+.bar { background: var(--acc); flex: 1; border-radius: 4px 4px 0 0; }
+
+/* Template Builder Section */
+.template-builder { background: var(--card); padding: 60px 0; }
+.templates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+.template-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--rad); padding: 20px; cursor: pointer; transition: all 0.3s ease; }
+.template-card:hover { border-color: var(--acc); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(15, 118, 110, 0.1); }
+.template-name { font-weight: 600; color: var(--txt); margin-bottom: 8px; }
+.template-desc { color: var(--mut); font-size: 0.9rem; }
+
+/* Patient Portal Section */
+.patient-portal { background: var(--bg2); padding: 60px 0; }
+.portal-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 40px 0; }
+.portal-feature { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; text-align: center; }
+.portal-icon { font-size: 2rem; color: var(--acc); margin-bottom: 16px; }
+.portal-feature h3 { margin-bottom: 12px; color: var(--txt); }
+.portal-feature p { color: var(--mut); font-size: 0.95rem; }
+
+/* Mobile Optimization */
+.mobile-app { background: var(--card); padding: 60px 0; }
+.mobile-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0; }
+.mobile-card { text-align: center; padding: 24px; }
+.mobile-icon { font-size: 2.5rem; color: var(--acc); margin-bottom: 16px; }
+.mobile-card h3 { margin-bottom: 12px; color: var(--txt); }
+.mobile-card p { color: var(--mut); font-size: 0.95rem; }
+
+/* Analytics Dashboard */
+.analytics { background: var(--bg2); padding: 60px 0; }
+.analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
+.analytics-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; }
+.metric-number { font-size: 2.5rem; font-weight: 700; color: var(--acc); display: block; margin-bottom: 8px; }
+.metric-label { color: var(--mut); font-weight: 500; }
+
+/* Education & Training */
+.education { background: var(--card); padding: 60px 0; }
+.training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+.training-card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--rad); padding: 24px; }
+.training-card h3 { margin-bottom: 12px; color: var(--txt); }
+.training-card p { color: var(--mut); font-size: 0.95rem; margin-bottom: 16px; }
+.ce-credit { display: inline-block; background: #fef3c7; color: #92400e; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; }
 </style>
 </head>
 <body>
@@ -131,10 +185,13 @@ footer a{color:var(--acc);text-decoration:none}
 <header><div class="wrap"><nav>
   <a class="logo" href="#"><span class="brand-mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-6 3.5 12 3-9 2 3h3"/></svg></span>SOAP Autopilot</a>
   <a href="#features">Features</a>
-  <a href="#integrations">Integrations</a>
-  <a href="#testimonials">Testimonials</a>
+  <a href="#progress">Progress Tracking</a>
+  <a href="#templates">Templates</a>
+  <a href="#patient">Patient Portal</a>
+  <a href="#mobile">Mobile</a>
+  <a href="#analytics">Analytics</a>
+  <a href="#education">Education</a>
   <a href="#pricing">Pricing</a>
-  <a href="#faq">FAQ</a>
   <a class="cta" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup">Try Free</a>
 </nav></div></header>
 
@@ -154,7 +211,7 @@ footer a{color:var(--acc);text-decoration:none}
 </div>
 
 <section id="features"><div class="wrap">
-  <h2>Enhanced Practice Management Features</h2>
+  <h2>Advanced Practice Management Features</h2>
   <p class="lede">Comprehensive tools for modern wellness practitioners</p>
   
   <div class="features-grid">
@@ -207,34 +264,175 @@ footer a{color:var(--acc);text-decoration:none}
   </div>
 </div></section>
 
-<section id="integrations" class="client-mgmt"><div class="wrap">
-  <h2>Seamless Integrations</h2>
-  <p class="lede">Works with your existing tools and workflows</p>
+<section id="progress" class="progress-tracking"><div class="wrap">
+  <h2>Progress Tracking & Outcome Measures</h2>
+  <p class="lede">Visualize client improvement over time with integrated outcome measures</p>
   
-  <div class="integration-grid">
-    <div class="integration-card">
-      <span class="integration-icon">📅</span>
-      <span class="integration-name">Calendar Sync</span>
+  <div class="progress-grid">
+    <div class="progress-card">
+      <h3>Pain Scale Tracking</h3>
+      <div class="progress-chart">
+        <div class="bar" style="height: 20%;">1</div>
+        <div class="bar" style="height: 40%;">2</div>
+        <div class="bar" style="height: 60%;">3</div>
+        <div class="bar" style="height: 45%;">4</div>
+        <div class="bar" style="height: 30%;">5</div>
+        <div class="bar" style="height: 15%;">6</div>
+      </div>
+      <p>Client pain levels tracked across sessions with trend analysis</p>
     </div>
-    <div class="integration-card">
-      <span class="integration-icon">💳</span>
-      <span class="integration-name">Payment Processing</span>
+    <div class="progress-card">
+      <h3>Range of Motion</h3>
+      <div class="progress-chart">
+        <div class="bar" style="height: 30%;">1</div>
+        <div class="bar" style="height: 45%;">2</div>
+        <div class="bar" style="height: 65%;">3</div>
+        <div class="bar" style="height: 75%;">4</div>
+        <div class="bar" style="height: 85%;">5</div>
+        <div class="bar" style="height: 90%;">6</div>
+      </div>
+      <p>Objective ROM measurements with visual improvement charts</p>
     </div>
-    <div class="integration-card">
-      <span class="integration-icon">📧</span>
-      <span class="integration-name">Email Marketing</span>
+    <div class="progress-card">
+      <h3>Functional Scores</h3>
+      <div class="progress-chart">
+        <div class="bar" style="height: 25%;">1</div>
+        <div class="bar" style="height: 40%;">2</div>
+        <div class="bar" style="height: 55%;">3</div>
+        <div class="bar" style="height: 70%;">4</div>
+        <div class="bar" style="height: 80%;">5</div>
+        <div class="bar" style="height: 85%;">6</div>
+      </div>
+      <p>Standardized outcome measures with automated scoring</p>
     </div>
-    <div class="integration-card">
-      <span class="integration-icon">📱</span>
-      <span class="integration-name">Mobile Apps</span>
+  </div>
+</div></section>
+
+<section id="templates" class="template-builder"><div class="wrap">
+  <h2>Treatment Plan Templates</h2>
+  <p class="lede">Pre-built templates for common conditions and evidence-based protocols</p>
+  
+  <div class="templates-grid">
+    <div class="template-card">
+      <div class="template-name">Lower Back Pain</div>
+      <div class="template-desc">Evidence-based protocol for acute and chronic lumbar conditions</div>
     </div>
-    <div class="integration-card">
-      <span class="integration-icon">📋</span>
-      <span class="integration-name">Practice Management</span>
+    <div class="template-card">
+      <div class="template-name">Neck & Shoulder</div>
+      <div class="template-desc">Comprehensive approach for cervical spine and shoulder girdle</div>
     </div>
-    <div class="integration-card">
-      <span class="integration-icon">🔒</span>
-      <span class="integration-name">HIPAA Compliance</span>
+    <div class="template-card">
+      <div class="template-name">Sports Injury</div>
+      <div class="template-desc">Protocol for athletic injuries with return-to-play guidelines</div>
+    </div>
+    <div class="template-card">
+      <div class="template-name">Postural Imbalances</div>
+      <div class="template-desc">Corrective approach for common postural dysfunctions</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="patient" class="patient-portal"><div class="wrap">
+  <h2>Patient Portal & Engagement</h2>
+  <p class="lede">Secure client access to appointment history and home care plans</p>
+  
+  <div class="portal-features">
+    <div class="portal-feature">
+      <span class="portal-icon">📱</span>
+      <h3>Appointment History</h3>
+      <p>View past sessions, treatment notes, and progress tracking</p>
+    </div>
+    <div class="portal-feature">
+      <span class="portal-icon">📝</span>
+      <h3>Home Care Plans</h3>
+      <p>Access personalized exercises and self-care instructions</p>
+    </div>
+    <div class="portal-feature">
+      <span class="portal-icon">📊</span>
+      <h3>Progress Tracking</h3>
+      <p>Monitor pain levels, ROM, and functional improvements</p>
+    </div>
+    <div class="portal-feature">
+      <span class="portal-icon">💬</span>
+      <h3>Secure Messaging</h3>
+      <p>Communicate between appointments securely</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="mobile" class="mobile-app"><div class="wrap">
+  <h2>Mobile Optimization</h2>
+  <p class="lede">Full functionality on phones and tablets with offline capability</p>
+  
+  <div class="mobile-features">
+    <div class="mobile-card">
+      <span class="mobile-icon">📱</span>
+      <h3>Native Mobile App</h3>
+      <p>Install as an app from your browser with full functionality</p>
+    </div>
+    <div class="mobile-card">
+      <span class="mobile-icon">✈️</span>
+      <h3>Offline Capability</h3>
+      <p>Full functionality without internet connection</p>
+    </div>
+    <div class="mobile-card">
+      <span class="mobile-icon">🎙️</span>
+      <h3>Voice Commands</h3>
+      <p>Hands-free navigation and documentation</p>
+    </div>
+    <div class="mobile-card">
+      <span class="mobile-icon">🌐</span>
+      <h3>Multi-Language</h3>
+      <p>Spanish, French, and other common languages</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="analytics" class="analytics"><div class="wrap">
+  <h2>Business Intelligence Dashboard</h2>
+  <p class="lede">Data-driven insights for practice growth and optimization</p>
+  
+  <div class="analytics-grid">
+    <div class="analytics-card">
+      <span class="metric-number">$12,450</span>
+      <span class="metric-label">Monthly Revenue</span>
+    </div>
+    <div class="analytics-card">
+      <span class="metric-number">87%</span>
+      <span class="metric-label">Client Retention</span>
+    </div>
+    <div class="analytics-card">
+      <span class="metric-number">3.2</span>
+      <span class="metric-label">Avg Sessions/Month</span>
+    </div>
+    <div class="analytics-card">
+      <span class="metric-number">94%</span>
+      <span class="metric-label">Appointment Rate</span>
+    </div>
+  </div>
+</div></section>
+
+<section id="education" class="education"><div class="wrap">
+  <h2>Education & Training</h2>
+  <p class="lede">Continuing education and clinical updates for professional growth</p>
+  
+  <div class="training-grid">
+    <div class="training-card">
+      <h3>CEU Integration</h3>
+      <p>Partnership with continuing education providers for easy credit tracking</p>
+      <span class="ce-credit">12 CEUs Available</span>
+    </div>
+    <div class="training-card">
+      <h3>Clinical Updates</h3>
+      <p>Latest research and best practices feeds directly to your dashboard</p>
+    </div>
+    <div class="training-card">
+      <h3>Peer Collaboration</h3>
+      <p>Anonymous case study sharing platform with expert insights</p>
+    </div>
+    <div class="training-card">
+      <h3>Mentorship Network</h3>
+      <p>Connection with experienced practitioners for guidance</p>
     </div>
   </div>
 </div></section>
@@ -243,14 +441,14 @@ footer a{color:var(--acc);text-decoration:none}
   <h2>From rambling voice memo → finished SOAP note</h2>
   <p class="lede">Real engine output, exactly as compiled.</p>
   <div class="demo-shot">
-    <span class="lbl">You say:</span>
-    <pre style="color:var(--mut)">"Patient reports left neck pain 6/10 since last week, worse at the computer.
+    <div class="note-container">
+      <span class="lbl">You say:</span>
+      <pre style="color:var(--mut); margin-bottom: 14px;">"Patient reports left neck pain 6/10 since last week, worse at the computer.
 Palpation found hypertonic levator scapulae left with trigger points.
 Worked cervical region, deep tissue upper traps bilaterally, 45 min."</pre>
-    <div class="arrow">▼ &nbsp;SOAP Autopilot&nbsp; ▼</div>
-    <span class="lbl">Compiled note:</span>
-    <div class="note-container">
-      <pre id="compiled-note">=== SUBJECTIVE ===
+      <div class="arrow">▼ &nbsp;SOAP Autopilot&nbsp; ▼</div>
+      <span class="lbl">Compiled note:</span>
+      <pre id="compiled-note" class="editable" contenteditable="false">=== SUBJECTIVE ===
 Patient reports left neck pain rated 6/10, started last week,
 aggravated by computer work.
 
@@ -266,27 +464,7 @@ Regions treated: cervical
 [cervical] Gentle ROM; suboccipital release; heat 10 min...
 Home care: chin tucks 2x10 daily; doorway pec stretch...
 Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
-      <button class="edit-button" onclick="editNote()">Edit</button>
-    </div>
-  </div>
-</div></section>
-
-<section id="testimonials" class="testimonials"><div class="wrap">
-  <h2>Trusted by Wellness Professionals</h2>
-  <p class="lede">See what practitioners say about improved efficiency</p>
-  
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <p class="testimonial-text">"SOAP Autopilot cut my documentation time from 20 minutes to 3 minutes per session. I can see 2 more clients daily and still have perfect notes."</p>
-      <p class="testimonial-author">— Sarah M., Licensed Massage Therapist</p>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-text">"The muscle-precise extraction is incredible. No more wondering if I documented the right anatomy. It's audit-proof."</p>
-      <p class="testimonial-author">— Michael T., Physical Therapist</p>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-text">"Finally, a system that understands how we actually speak during sessions. The voice-to-text is spot-on for therapeutic language."</p>
-      <p class="testimonial-author">— Jennifer L., Chiropractor</p>
+      <button class="edit-button" onclick="editNote(this)">Edit</button>
     </div>
   </div>
 </div></section>
@@ -323,6 +501,9 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
         <li>Full resource hub + handouts</li>
         <li><b>Advanced client profiles</b> — medical history, goals, progress tracking</li>
         <li><b>Appointment integration</b> — sync with scheduling tools</li>
+        <li><b>Progress tracking</b> — visual charts and outcome measures</li>
+        <li><b>Template builder</b> — customizable treatment plans</li>
+        <li><b>Mobile app access</b> — full functionality on phone/tablet</li>
         <li>Email support</li>
       </ul>
       <a class="btn btn-pri" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup" style="text-align:center">Go Professional</a>
@@ -339,6 +520,10 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
         <li>Online booking for the team</li>
         <li><b>Business analytics</b> — revenue, retention, performance metrics</li>
         <li><b>Marketing tools</b> — automated campaigns, referral tracking</li>
+        <li><b>Patient portal</b> — secure client access to records</li>
+        <li><b>Advanced integrations</b> — EMR, fitness apps, labs</li>
+        <li><b>Custom API access</b> — developer tools for integrations</li>
+        <li><b>Education platform</b> — CEUs, clinical updates, mentorship</li>
         <li>Priority support</li>
       </ul>
       <a class="btn btn-sec" href="http://127.0.0.1:5570/signup" data-app-cta="http://127.0.0.1:5570/signup" style="text-align:center">Contact Us</a>
@@ -354,13 +539,18 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
   <details><summary>Is it HIPAA-friendly?</summary><p>Notes are processed locally on your device/browser session. We never train models on your clinical content. Client names are optional fields.</p></details>
   <details><summary>What if I bill insurance?</summary><p>Select a payer profile and every note gains CPT unit math (8-minute rule), ICD-10 anchors, medical-necessity language and an audit checklist.</p></details>
   <details><summary>Can I use it on my phone between sessions?</summary><p>Yes — install it as an app from your browser (Add to Home Screen) and dictate right from the treatment room.</p></details>
-  <details><summary>How does client management work?</summary><p>Professional and Premier plans include comprehensive client profiles with medical history, goals, progress tracking, and automated communication tools to improve retention.</p></details>
-  <details><summary>What integrations are available?</summary><p>We integrate with major scheduling platforms, payment processors, and practice management systems. API access available on Premier plan.</p></details>
+  <details><summary>How does progress tracking work?</summary><p>Professional and Premier plans include visual charts for pain scales, ROM measurements, and standardized outcome measures to track client improvement over time.</p></details>
+  <details><summary>Are there treatment plan templates?</summary><p>Yes, Professional plan includes pre-built templates for common conditions. Premier adds customizable template builder and evidence-based protocols.</p></details>
+  <details><summary>What mobile features are available?</summary><p>Full offline functionality, native app installation, voice commands, and multi-language support available on Professional and Premier plans.</p></details>
+  <details><summary>How does the patient portal work?</summary><p>Secure client access to appointment history, home care plans, progress tracking, and secure messaging. Available on Premier plan.</p></details>
+  <details><summary>What analytics are included?</summary><p>Revenue tracking, client retention metrics, appointment rates, and performance dashboards. Advanced analytics available on Premier plan.</p></details>
+  <details><summary>Is continuing education available?</summary><p>Yes, Premier plan includes CEU partnerships, clinical updates, peer collaboration, and mentorship network access.</p></details>
 </div></section>
 
 <script>
-function editNote() {
-  const noteElement = document.getElementById('compiled-note');
+function editNote(button) {
+  const container = button.closest('.note-container');
+  const noteElement = container.querySelector('#compiled-note');
   const currentText = noteElement.textContent || noteElement.innerText;
   
   // Create a textarea for editing
@@ -378,8 +568,7 @@ function editNote() {
   textarea.style.color = 'var(--txt)';
   
   // Replace the pre element with textarea
-  const parentDiv = noteElement.parentElement;
-  parentDiv.replaceChild(textarea, noteElement);
+  noteElement.parentNode.replaceChild(textarea, noteElement);
   textarea.focus();
   
   // Create save button
@@ -396,11 +585,12 @@ function editNote() {
     // Replace textarea back to pre element
     const newPre = document.createElement('pre');
     newPre.id = 'compiled-note';
+    newPre.className = 'editable';
     newPre.textContent = textarea.value;
     newPre.style.whiteSpace = 'pre-wrap';
     newPre.style.color = 'var(--mut)';
     
-    textarea.parentElement.replaceChild(newPre, textarea);
+    textarea.parentNode.replaceChild(newPre, textarea);
     
     // Remove the save button
     saveButton.remove();
@@ -408,16 +598,16 @@ function editNote() {
     // Add the edit button back
     const editButton = document.createElement('button');
     editButton.className = 'edit-button';
-    editButton.onclick = editNote;
+    editButton.onclick = function() { editNote(editButton); };
     editButton.textContent = 'Edit';
     
     // Insert the edit button after the new pre element
-    textarea.parentElement.insertBefore(editButton, newPre.nextSibling);
+    newPre.parentNode.appendChild(editButton);
   };
   
   // Add save button next to the textarea
-  parentDiv.appendChild(document.createTextNode(' ')); // Add space
-  parentDiv.appendChild(saveButton);
+  container.appendChild(document.createTextNode(' ')); // Add space
+  container.appendChild(saveButton);
 }
 </script>
 
