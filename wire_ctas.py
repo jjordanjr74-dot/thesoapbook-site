@@ -26,10 +26,12 @@ MARK = "data-app-cta"
 # button label (as it appears in the HTML) -> app path
 CTAS = {
     "Start Your Free Note": "/signup",
-    "Try Free": "/signup",
-    "Start Free": "/signup",
+    "Start Your Free Trial": "/signup",   # label adopted on the site (2026-10-15); the checker
+    "Try Free": "/signup",                # was still looking for the old wording and reported
+    "Start Free": "/signup",              # 3/5 buy-intent anchors with 5 real CTAs on the page.
     "Go Professional": "/signup",
     "Contact Us": "/signup",
+    "Contact Sales": "/signup",
 }
 
 # only anchors that actually contain a buy-intent label count as CTAs

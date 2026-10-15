@@ -1,0 +1,19 @@
+{
+  "venture": "SOAP Autopilot",
+  "purpose": "Premium marketing package — positioning, outreach, GBP, social, and first-10-practice playbook for SOAP Autopilot (solo practitioners & small clinics).",
+  "base_dir": "D:/Hermes_Core/workspace/soap_site/marketing",
+  "created": "2026-10-12",
+  "verified_against": {
+    "prices": "D:/Hermes_Core/workspace/soap_autopilot/billing.py (Professional 1400¢, Premier 3900¢, Seedling) and butter soap_site/index.html pricing cards ($14/$39)",
+    "competitor reminder gating": "D:/Hermes_Core/workspace/soap_autopilot/notify.py (ClinicSense top-tier ~$69, MassageBook ~$59; we queue on $14 plan)"
+  },
+  "files": [
+    {"name": "POSITIONING.md", "bytes": 4688},
+    {"name": "OUTREACH.md", "bytes": 4997},
+    {"name": "GBP_POSTS.md", "bytes": 3426},
+    {"name": "SOCIAL.md", "bytes": 2383},
+    {"name": "PLAYBOOK.md", "bytes": 3887}
+  ],
+  "total_files": 5,
+  "total_bytes": 19381
+}
