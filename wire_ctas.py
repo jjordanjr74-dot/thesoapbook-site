@@ -36,6 +36,10 @@ CTAS = {
 
 # only anchors that actually contain a buy-intent label count as CTAs
 LABEL_ALT = "|".join(re.escape(k) for k in CTAS)
+EXPECTED_MIN_CTA = 5  # measured 2026-10-15: the page carries exactly 5 buy-intent anchors
+                      # (Start Free x2, Start Your Free Trial, Go Professional, Contact Sales).
+                      # The old bar was len(CTAS) - a map of RECOGNISED labels - so adding the
+                      # site's current wording to the map raised the bar and failed a correct page.
 
 
 def anchors(html: str):
@@ -71,8 +75,8 @@ def check(html: str) -> int:
     if dead:
         print(f"  FAIL: CTAs point nowhere ({', '.join(dead)}) — a visitor cannot reach /signup.")
         return 1
-    if len(found) < len(CTAS):
-        print(f"  FAIL: expected >= {len(CTAS)} buy-intent anchors, found {len(found)}.")
+    if len(found) < EXPECTED_MIN_CTA:
+        print(f"  FAIL: expected >= {EXPECTED_MIN_CTA} buy-intent anchors, found {len(found)}.")
         return 1
     if len(re.findall(rf'{MARK}=', html)) < len(found):
         print("  WARN: some CTAs are wired but untagged (no data-app-cta); re-run with --base.")
