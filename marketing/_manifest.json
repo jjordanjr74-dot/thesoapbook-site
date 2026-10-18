@@ -1,19 +1,45 @@
 {
   "venture": "SOAP Autopilot",
-  "purpose": "Premium marketing package — positioning, outreach, GBP, social, and first-10-practice playbook for SOAP Autopilot (solo practitioners & small clinics).",
+  "purpose": "Premium marketing package - positioning, offer, outreach, GBP, social, prospects and first-10-practice playbook for SOAP Autopilot (solo practitioners & small clinics).",
   "base_dir": "D:/Hermes_Core/workspace/soap_site/marketing",
   "created": "2026-10-12",
+  "updated": "2026-10-17 (gap-fill: OFFER.md, PROSPECTS.csv added; existing 5 files untouched)",
   "verified_against": {
-    "prices": "D:/Hermes_Core/workspace/soap_autopilot/billing.py (Professional 1400¢, Premier 3900¢, Seedling) and butter soap_site/index.html pricing cards ($14/$39)",
-    "competitor reminder gating": "D:/Hermes_Core/workspace/soap_autopilot/notify.py (ClinicSense top-tier ~$69, MassageBook ~$59; we queue on $14 plan)"
+    "prices": "D:/Hermes_Core/workspace/soap_autopilot/billing.py (Seedling 0, Professional 1400, Premier 3900 cents) + D:/Hermes_Core/Teams/Marketing/ops/offer_truth.json",
+    "competitor reminder gating": "D:/Hermes_Core/workspace/soap_autopilot/notify.py (ClinicSense $69 tier, MassageBook $59)",
+    "PROSPECTS.csv": "every row carries its own source_url from web search 2026-10-17; blank = not stated by source"
   },
   "files": [
-    {"name": "POSITIONING.md", "bytes": 4688},
-    {"name": "OUTREACH.md", "bytes": 4997},
-    {"name": "GBP_POSTS.md", "bytes": 3426},
-    {"name": "SOCIAL.md", "bytes": 2383},
-    {"name": "PLAYBOOK.md", "bytes": 3887}
+    {
+      "name": "GBP_POSTS.md",
+      "bytes": 3426
+    },
+    {
+      "name": "OFFER.md",
+      "bytes": 2944
+    },
+    {
+      "name": "OUTREACH.md",
+      "bytes": 4997
+    },
+    {
+      "name": "PLAYBOOK.md",
+      "bytes": 3887
+    },
+    {
+      "name": "POSITIONING.md",
+      "bytes": 4688
+    },
+    {
+      "name": "PROSPECTS.csv",
+      "bytes": 2522,
+      "rows": 15
+    },
+    {
+      "name": "SOCIAL.md",
+      "bytes": 2383
+    }
   ],
-  "total_files": 5,
-  "total_bytes": 19381
+  "total_files": 7,
+  "total_bytes": 24847
 }
