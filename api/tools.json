@@ -1,0 +1,62 @@
+{
+  "schema_version": "webmcp-1.0",
+  "site": "https://thesoapbook.com",
+  "app_url": "https://app.thesoapbook.com",
+  "name": "SOAP Autopilot",
+  "bilingual_languages": ["en", "es"],
+  "supported_currencies": ["USD", "CAD", "GBP", "EUR", "AUD"],
+  "description": "Voice-to-SOAP clinical documentation, 50-muscle anatomical mapping, online booking, and no-show protection for licensed massage therapists worldwide.",
+  "plans": [
+    {
+      "id": "seedling",
+      "name_en": "Seedling",
+      "name_es": "Semilla (Gratis)",
+      "price_monthly_usd": 0,
+      "max_clients": 15,
+      "therapists": 1,
+      "voice_soap_included": true,
+      "online_booking": false
+    },
+    {
+      "id": "professional",
+      "name_en": "Professional",
+      "name_es": "Profesional",
+      "price_monthly_usd": 14,
+      "max_clients": "unlimited",
+      "therapists": 1,
+      "voice_soap_included": true,
+      "online_booking": true,
+      "annual_savings_vs_competitors_usd": "660-1020"
+    },
+    {
+      "id": "premier",
+      "name_en": "Premier",
+      "name_es": "Premier (Multi-Terapeuta)",
+      "price_monthly_usd": 39,
+      "max_clients": "unlimited",
+      "therapists": "multiple (flat rate, $0 per-seat fee)",
+      "voice_soap_included": true,
+      "online_booking": true
+    }
+  ],
+  "tools": [
+    {
+      "name": "list_plans",
+      "description": "List published SOAP Autopilot plans (Seedling $0, Professional $14/mo, Premier $39/mo) and capabilities.",
+      "input_schema": {"type": "object", "properties": {}, "additionalProperties": false}
+    },
+    {
+      "name": "calculate_annual_savings",
+      "description": "Calculate annual savings of SOAP Autopilot vs Jane App, SimplePractice, and ClinicSense for N therapists.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "therapists": {"type": "integer", "minimum": 1, "maximum": 25},
+          "currency": {"type": "string", "enum": ["USD", "CAD", "GBP", "EUR", "AUD"]}
+        },
+        "required": ["therapists"],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

@@ -20,6 +20,9 @@
 <meta name="twitter:description" content="Voice-first, structured SOAP notes with integrated practice management.">
 <meta name="twitter:image" content="https://thesoapbook.com/og-1200x630.png">
 <link rel="canonical" href="https://thesoapbook.com/">
+<link rel="alternate" hreflang="en" href="https://thesoapbook.com/">
+<link rel="alternate" hreflang="es" href="https://thesoapbook.com/?lang=es">
+<link rel="modelcontext" href="/api/tools.json">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/favicon-32.png">
 
@@ -607,6 +610,29 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
         </tr>
       </tbody>
     </table>
+    <aside id="soap-roi-calc" style="margin-top: 24px; padding: 20px; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px;">
+      <p style="margin: 0 0 10px; font-weight: 700; font-size: 1.05rem; color: var(--txt);">Interactive Global Savings &amp; Currency Calculator (US, Canada, UK, EU, Australia &amp; Latin America)</p>
+      <p style="margin: 0 0 12px; font-size: 0.94rem;">
+        <label for="soapSeats" style="font-weight: 600; margin-right: 8px;">Therapists in practice:</label>
+        <select id="soapSeats" onchange="updateSoapCalc()" style="padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); font-weight: 700; margin-right: 16px;">
+          <option value="1" selected>1 Solo Therapist (Professional $14/mo)</option>
+          <option value="2">2 Therapists (Premier $39/mo flat)</option>
+          <option value="3">3 Therapists (Premier $39/mo flat)</option>
+          <option value="5">5 Therapists (Premier $39/mo flat)</option>
+          <option value="10">10 Therapists (Premier $39/mo flat)</option>
+        </select>
+        <label for="soapCurr" style="font-weight: 600; margin-right: 8px;">Currency:</label>
+        <select id="soapCurr" onchange="updateSoapCalc()" style="padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); font-weight: 700;">
+          <option value="USD" selected>USD ($)</option>
+          <option value="CAD">CAD ($)</option>
+          <option value="GBP">GBP (&pound;)</option>
+          <option value="EUR">EUR (&euro;)</option>
+          <option value="AUD">AUD ($)</option>
+        </select>
+      </p>
+      <p id="soapCalcOut" style="margin: 0; font-weight: 700; color: #0f766e; font-size: 0.98rem;">With 1 solo therapist: SOAP Autopilot costs $14/mo ($168/yr) vs. $79-$99/mo on Jane App / SimplePractice — saving you $780 to $1,020 every year.</p>
+      <p style="margin: 8px 0 0; font-size: 0.84rem; color: var(--mut);">Global Readiness: AES-256-GCM encrypted &amp; tamper-evident locked notes aligned with US privacy standards, Canada PIPEDA, UK/EU GDPR, and Australia Privacy Act &middot; Bilingual English / Espa&ntilde;ol interface.</p>
+    </aside>
   </div>
 </div></section>
 
@@ -712,6 +738,75 @@ function editNote(button) {
   nav.addEventListener('click',function(e){
     if(e.target.closest('a')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
   });
+})();
+
+function updateSoapCalc() {
+  var sEl = document.getElementById('soapSeats');
+  var cEl = document.getElementById('soapCurr');
+  var out = document.getElementById('soapCalcOut');
+  if (!sEl || !cEl || !out) return;
+  var n = parseInt(sEl.value || '1', 10);
+  var cur = cEl.value || 'USD';
+  var rates = {USD: [1, '$'], CAD: [1.38, 'CA$'], GBP: [0.78, '£'], EUR: [0.92, '€'], AUD: [1.52, 'A$']};
+  var r = rates[cur] || rates.USD;
+  var mult = r[0], sym = r[1];
+  var soapMo = Math.round((n === 1 ? 14 : 39) * mult);
+  var compMo = Math.round((n === 1 ? 89 : (99 + (n - 1) * 35)) * mult);
+  var saveYr = (compMo - soapMo) * 12;
+  var lang = document.documentElement.getAttribute('data-lang') || 'en';
+  if (lang === 'es') {
+    out.textContent = 'Con ' + n + (n === 1 ? ' terapeuta' : ' terapeutas') + ': SOAP Autopilot cuesta ' + sym + soapMo + '/mes vs. ' + sym + compMo + '/mes en plataformas tradicionales — ahorrando ' + sym + saveYr.toLocaleString() + ' al año (' + cur + ').';
+  } else {
+    out.textContent = 'With ' + n + (n === 1 ? ' solo therapist' : ' therapists') + ': SOAP Autopilot is ' + sym + soapMo + '/mo vs. ~' + sym + compMo + '/mo on Jane App / SimplePractice — saving you ' + sym + saveYr.toLocaleString() + ' per year (' + cur + ').';
+  }
+}
+
+(function initSoapBilingualAndWebMCP() {
+  if (navigator.modelContext && typeof navigator.modelContext.registerTool === 'function') {
+    fetch('/api/tools.json').then(function(r){return r.json();}).then(function(m){
+      (m.tools || []).forEach(function(t){ try { navigator.modelContext.registerTool(t); } catch(e) {} });
+    }).catch(function(){});
+  }
+  var esMap = {
+    'In Today\'s Economy: How SOAP Autopilot Compares on Price & Features': 'En la Economía Actual: Cómo Se Compara SOAP Autopilot en Precio y Funciones',
+    'Start Free': 'Comenzar Gratis',
+    'Contact Sales': 'Contactar Ventas',
+    'Therapists in practice:': 'Terapeutas en consulta:',
+    'Currency:': 'Moneda:'
+  };
+  var revMap = {};
+  Object.keys(esMap).forEach(function(k){ revMap[esMap[k]] = k; });
+  var bar = document.createElement('aside');
+  bar.setAttribute('aria-label', 'Language selector / Selector de idioma');
+  bar.style.cssText = 'position:fixed;bottom:18px;left:18px;z-index:9999;background:#0f172a;color:#fff;padding:8px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,0.25);font-size:0.84rem;font-weight:700;display:flex;align-items:center;gap:8px;border:2px solid #0f766e;';
+  var btnEn = document.createElement('button');
+  btnEn.type = 'button';
+  btnEn.textContent = 'EN';
+  btnEn.style.cssText = 'background:#0f766e;color:#fff;border:none;border-radius:999px;padding:4px 10px;cursor:pointer;font-weight:800;font-size:0.8rem;';
+  var btnEs = document.createElement('button');
+  btnEs.type = 'button';
+  btnEs.textContent = 'Español (ES)';
+  btnEs.style.cssText = 'background:transparent;color:#99f6e4;border:1px solid #99f6e4;border-radius:999px;padding:4px 10px;cursor:pointer;font-weight:800;font-size:0.8rem;';
+  bar.appendChild(btnEn);
+  bar.appendChild(btnEs);
+  document.body.appendChild(bar);
+  function applyLang(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    var dict = lang === 'es' ? esMap : revMap;
+    document.querySelectorAll('h1,h2,h3,a,label,th,td').forEach(function(el) {
+      if (el.children.length === 0) {
+        var txt = (el.textContent || '').trim();
+        if (dict[txt]) el.textContent = dict[txt];
+      }
+    });
+    btnEn.style.background = lang === 'en' ? '#0f766e' : 'transparent';
+    btnEs.style.background = lang === 'es' ? '#0f766e' : 'transparent';
+    btnEs.style.color = '#fff';
+    updateSoapCalc();
+  }
+  btnEn.onclick = function() { applyLang('en'); };
+  btnEs.onclick = function() { applyLang('es'); };
+  if (new URLSearchParams(location.search).get('lang') === 'es') applyLang('es');
 })();
 </script>
 </body>
