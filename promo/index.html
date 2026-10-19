@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'">
+<title>SOAP Autopilot — SOAP notes for licensed massage therapists</title>
+<meta name="description" content="Dictate or paste a session and get a structured SOAP draft. Signed notes lock. Clients self-serve cancel and waitlist. Seedling $0, Professional $14/mo, Premier $39/mo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SOAP Autopilot — dictate the session, get the SOAP draft">
+<meta property="og:description" content="SOAP documentation for licensed massage therapists. Seedling $0 · Professional $14/mo · Premier $39/mo.">
+<meta property="og:image" content="assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!--
+  Design: type-led, Notion-family editorial system (serif display + neutral sans), recoloured to the
+  site palette: ink #111827, honey #f2603a. Fonts self-hosted (SIL OFL 1.1): fonts/OFL-*.txt, fonts/LICENSE.
+  Contrast: paper #faf7f2 on ink 17.4:1; muted #cbd5e1 on ink 12.0:1; honey on ink 4.9:1 (AA);
+  ink on honey buttons 4.9:1 (AA). Honey is never used as small text on light surfaces.
+  Fact sources: prices = workspace/soap_autopilot/billing.py PLANS (price_cents 0 / 1400 / 3900) and
+  Teams/Marketing/ops/offer_truth.json advertised_prices_usd ("14", "39"). No cs_live SOAP link exists in
+  offer_truth.json or LIVE_LINKS.md ("SOAP is sold by demo, not by link"), so every CTA = app signup.
+-->
+<style>
+@font-face{font-family:"Fraunces";src:url("fonts/fraunces-600-latin.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/inter-var-latin.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{--ink:#111827;--ink2:#1f2937;--ink3:#374151;--paper:#faf7f2;--muted:#cbd5e1;--honey:#f2603a;--rule:#e2dcd2;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--honey);color:var(--ink);padding:8px 12px;border-radius:6px;z-index:9}
+header.bar{border-top:6px solid var(--honey)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+.mark{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--honey);text-decoration:none}
+.btn{display:inline-block;font:600 16px/1 var(--sans);text-decoration:none;border-radius:999px;padding:15px 26px;transition:transform .15s ease}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--honey);outline-offset:3px}
+.btn-pri{background:var(--honey);color:var(--ink)}
+.btn-pri:hover{transform:translateY(-1px)}
+.btn-ghost{border:1.5px solid var(--muted);color:var(--paper)}
+.btn-sm{padding:10px 18px;font-size:14px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08}
+h1{font-size:clamp(40px,8.4vw,84px);max-width:13ch}
+h2{font-size:clamp(30px,5vw,48px);max-width:20ch}
+h3{font-size:24px}
+.kicker{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--honey);margin-bottom:18px}
+.lede{color:var(--muted);font-size:clamp(17px,2.2vw,20px);max-width:56ch;margin-top:22px}
+section{padding:72px 0;border-top:1px solid var(--ink3)}
+.hero{padding:56px 0 80px;border-top:0;display:grid;gap:44px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.fine{color:var(--muted);font-size:14px;margin-top:14px}
+/* CSS-drawn note-card motif */
+.card-note{background:var(--paper);color:var(--ink);border-radius:18px;padding:22px 22px 22px 70px;position:relative;max-width:420px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.card-note::before{content:"";position:absolute;left:52px;top:12px;bottom:12px;width:3px;background:var(--honey)}
+.card-note .row{display:grid;grid-template-columns:1fr;gap:9px;padding:12px 0;position:relative}
+.card-note .row b{position:absolute;left:-50px;top:10px;font:600 15px/1 var(--sans)}
+.card-note .row i{display:block;height:3px;background:var(--rule);border-radius:2px}
+.card-note .row i:last-child{width:64%}
+.props{display:grid;gap:18px;margin-top:40px}
+.prop{background:var(--ink2);border:1px solid var(--ink3);border-radius:16px;padding:28px}
+.prop .n{font:600 13px/1 var(--sans);color:var(--honey);letter-spacing:.12em}
+.prop h3{margin:14px 0 10px}
+.prop p{color:var(--muted)}
+.demo{display:grid;gap:28px;margin-top:36px}
+video{width:100%;aspect-ratio:16/9;border-radius:16px;background:var(--ink2);border:1px solid var(--ink3);display:block}
+.tiers{display:grid;gap:18px;margin-top:40px}
+.tier{border:1px solid var(--ink3);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:16px;background:var(--ink)}
+.tier.feat{border:2px solid var(--honey);background:var(--ink2)}
+.tier .price{font:600 52px/1 var(--serif)}
+.tier .price small{font:400 16px/1 var(--sans);color:var(--muted);margin-left:4px}
+.tier ul{list-style:none;color:var(--muted);display:grid;gap:8px}
+.tier li::before{content:"— ";color:var(--honey)}
+.tier .btn{margin-top:auto;text-align:center}
+.faq{margin-top:32px;display:grid;gap:12px;max-width:820px}
+details{border:1px solid var(--ink3);border-radius:12px;padding:18px 20px;background:var(--ink2)}
+summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--honey);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:12px}
+.band{background:var(--honey);color:var(--ink);border-top:0;text-align:left}
+.band h2{max-width:22ch}
+.band p{margin-top:14px;font-size:18px;max-width:52ch}
+.band .btn{background:var(--ink);color:var(--paper);margin-top:28px}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer a{color:var(--paper)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}html{scroll-behavior:auto}}
+@media (min-width:768px){
+  .wrap{padding:0 32px}
+  .props{grid-template-columns:repeat(3,1fr)}
+  .tiers{grid-template-columns:repeat(3,1fr)}
+  section{padding:96px 0}
+}
+@media (min-width:1024px){
+  .hero{grid-template-columns:1.35fr 1fr;align-items:center;padding:80px 0 110px}
+  .demo{grid-template-columns:1.6fr 1fr;align-items:center}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="mark" href="#top">SOAP Autopilot</a>
+  <a class="btn btn-ghost btn-sm" href="https://app.thesoapbook.com/signup">Start free</a>
+</div></header>
+
+<main id="main">
+<!-- (a) HERO -->
+<div class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <p class="kicker">For licensed massage therapists</p>
+      <h1>Dictate the session. Get the SOAP draft.</h1>
+      <!-- source: soap_autopilot/README.md "Dictate or paste a session and get a complete, deterministic SOAP note" -->
+      <p class="lede">Speak or paste what happened in the room. SOAP Autopilot sorts it into Subjective, Objective, Assessment and Plan with the muscles named, so you review and sign instead of starting from a blank page.</p>
+      <div class="ctas">
+        <a class="btn btn-pri" href="https://app.thesoapbook.com/signup">Start free</a>
+        <a class="btn btn-ghost" href="#pricing">See pricing</a>
+      </div>
+      <p class="fine">Seedling is $0. Paid tiers check out inside the app when you choose to upgrade.</p>
+      <!-- source: billing.py PLANS seedling price_cents 0 (free tier; signup creates the account, checkout only for paid tiers) -->
+    </div>
+    <div class="card-note" aria-hidden="true">
+      <div class="row"><b>S</b><i></i><i></i><i></i></div>
+      <div class="row"><b>O</b><i></i><i></i><i></i></div>
+      <div class="row"><b>A</b><i></i><i></i><i></i></div>
+      <div class="row"><b>P</b><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</div>
+
+<!-- (b) VALUE PROPS -->
+<section class="reveal" aria-labelledby="why">
+  <div class="wrap">
+    <p class="kicker">What changes after the session</p>
+    <h2 id="why">Chart from dictation. Let clients handle their own cancellations.</h2>
+    <div class="props">
+      <article class="prop">
+        <!-- source: soap_autopilot/README.md Features ("Deterministic muscle extraction (~50 muscles, 33 body regions...)",
+             "Local voice dictation (faster-whisper on CPU — audio never leaves the device)"); soap_engine.py docstring
+             ("Turns raw session input (dictation, bullet notes, chat) into a complete, muscle-precise SOAP note") -->
+        <p class="n">01</p>
+        <h3>Draft notes from dictation</h3>
+        <p>Talk through the session or paste your shorthand. You get a structured SOAP draft to review and sign. Dictation runs locally, so the audio never leaves your device.</p>
+      </article>
+      <article class="prop">
+        <!-- source: soap_autopilot/README.md "Client portal (Professional+) ... cancels within policy" and
+             "Bookings portal (Professional+) ... cancellation window, mandatory policy acceptance ..., waitlist";
+             web_ui.py routes /appt/<id>/cancel and action == "waitlist" -->
+        <p class="n">02</p>
+        <h3>Self-serve cancel and waitlist</h3>
+        <p>Clients cancel inside the window you set and join a waitlist for a full day, from their own portal link. Your policy is accepted before they book online.</p>
+      </article>
+      <article class="prop">
+        <!-- source: billing.py docstring "premier $39/mo — unlimited clients, multiple therapists, online booking";
+             PLANS carries one flat price_cents per tier and no per-seat price. -->
+        <p class="n">03</p>
+        <h3>No per-therapist fees</h3>
+        <p>Every plan is one flat monthly price. Premier covers multiple therapists for $39/mo — adding a colleague does not add a seat charge.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- (c) DEMO -->
+<section class="reveal" aria-labelledby="demo">
+  <div class="wrap">
+    <p class="kicker">See it work</p>
+    <h2 id="demo">Watch the walkthrough, then try the app.</h2>
+    <div class="demo">
+      <video controls preload="none" poster="video/soap_16x9.jpg" src="video/soap_16x9.mp4">
+        Your browser does not play this video. Open the app instead: https://app.thesoapbook.com
+      </video>
+      <div>
+        <p class="lede" style="margin-top:0">The app is live. Create a Seedling account and write your first note against a real session from your week.</p>
+        <!-- verified: GET https://app.thesoapbook.com -> HTTP 200 (curl, 2026-10-17) -->
+        <p style="margin-top:24px"><a class="btn btn-pri" href="https://app.thesoapbook.com">Open app.thesoapbook.com</a></p>
+        <!-- source: soap_autopilot/recordkeeping.py docstring "draft -> signed/locked with a tamper-evident hash; edits must be amendments"; crypto.py "AES-256-GCM" -->
+        <p class="fine">Privacy-aligned recordkeeping with encrypted, locked notes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- (d) PRICING — billing.py PLANS + offer_truth.json advertised_prices_usd -->
+<section class="reveal" id="pricing" aria-labelledby="price-h">
+  <div class="wrap">
+    <p class="kicker">Pricing</p>
+    <h2 id="price-h">Start free. Upgrade when online booking matters.</h2>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Seedling</h3>
+        <div class="price">$0<small>/month</small></div>
+        <!-- billing.py: seedling $0 (free) — 15 clients, 1 therapist, no online booking -->
+        <ul><li>Up to 15 clients</li><li>1 therapist</li><li>SOAP drafts from dictation or notes</li><li>No online booking</li></ul>
+        <a class="btn btn-ghost" href="https://app.thesoapbook.com/signup">Start free</a>
+      </div>
+      <div class="tier feat">
+        <h3>Professional</h3>
+        <div class="price">$14<small>/month</small></div>
+        <!-- billing.py: professional $14/mo — unlimited clients, 1 therapist, online booking; README: portals + recordkeeping Professional+ -->
+        <ul><li>Unlimited clients</li><li>1 therapist</li><li>Online booking with your policy</li><li>Client portal: self-serve cancel and waitlist</li><li>Intake forms, signed and locked notes</li></ul>
+        <a class="btn btn-pri" href="https://app.thesoapbook.com/signup">Start free, then upgrade</a>
+      </div>
+      <div class="tier">
+        <h3>Premier</h3>
+        <div class="price">$39<small>/month</small></div>
+        <!-- billing.py: premier $39/mo — unlimited clients, multiple therapists, online booking -->
+        <ul><li>Everything in Professional</li><li>Multiple therapists</li><li>One flat monthly price</li></ul>
+        <a class="btn btn-ghost" href="https://app.thesoapbook.com/signup">Start free, then upgrade</a>
+      </div>
+    </div>
+    <!-- web_ui.py account page: "Upgrade or downgrade any time. Cancel whenever." -->
+    <p class="fine">Upgrade or downgrade any time from your account page. Cancel whenever.</p>
+    <div class="prop" style="margin-top:28px;overflow-x:auto">
+      <p class="n">IN TODAY&apos;S ECONOMY &middot; 2026 PUBLISHED RATES</p>
+      <h3>How SOAP Autopilot Compares to Jane App, SimplePractice &amp; ClinicSense</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:15px;min-width:560px;margin-top:12px;text-align:left">
+        <thead>
+          <tr style="border-bottom:2px solid var(--ink3)">
+            <th style="padding:10px 12px">Plan &amp; Capability</th>
+            <th style="padding:10px 12px;color:var(--honey)">SOAP Autopilot</th>
+            <th style="padding:10px 12px">Jane App</th>
+            <th style="padding:10px 12px">SimplePractice / ClinicSense</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--ink3)">
+            <td style="padding:10px 12px;font-weight:600">Entry Plan (Getting Started)</td>
+            <td style="padding:10px 12px;font-weight:700;color:var(--honey)">$0/mo (Seedling &middot; 15 clients + dictation)</td>
+            <td style="padding:10px 12px">$54/mo (20-appt cap)</td>
+            <td style="padding:10px 12px">$39/mo (limited reminders/appts)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--ink3)">
+            <td style="padding:10px 12px;font-weight:600">Full-Time Solo Therapist</td>
+            <td style="padding:10px 12px;font-weight:700;color:var(--honey)">$14/mo (Professional &middot; Save $660&ndash;$1,020/yr)</td>
+            <td style="padding:10px 12px">$79&ndash;$99/mo (+$15/mo scribe)</td>
+            <td style="padding:10px 12px">$69&ndash;$99/mo</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;font-weight:600">Multi-Therapist Practice</td>
+            <td style="padding:10px 12px;font-weight:700;color:var(--honey)">$39/mo flat (Premier &middot; Multi-seat included)</td>
+            <td style="padding:10px 12px">$99/mo + $35&ndash;$40/extra therapist</td>
+            <td style="padding:10px 12px">$99/mo + per-seat fees</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- (e) FAQ -->
+<section class="reveal" aria-labelledby="faq-h">
+  <div class="wrap">
+    <p class="kicker">Questions</p>
+    <h2 id="faq-h">Straight answers.</h2>
+    <div class="faq">
+      <details><summary>Does an AI make up my notes?</summary>
+        <!-- README: "no hallucinating LLM figures out your anatomy; a purpose-built engine does"; soap_engine.py "Deterministic first" -->
+        <p>No. A deterministic engine maps what you said to muscles and body regions and sorts it into S, O, A and P. You review the draft and sign it.</p></details>
+      <details><summary>Where does my dictation audio go?</summary>
+        <!-- README: "Local voice dictation (faster-whisper on CPU — audio never leaves the device)" -->
+        <p>Nowhere. Voice dictation runs locally on your own device; the audio never leaves it.</p></details>
+      <details><summary>Is it HIPAA certified?</summary>
+        <!-- house rule: no certification claim. crypto.py AES-256-GCM field-level encryption; recordkeeping.py signed/locked notes -->
+        <p>We make no certification claim. What we offer is privacy-aligned recordkeeping with encrypted, locked notes: client details and note text are encrypted at rest, and a signed note locks with a tamper-evident hash, so corrections become amendments.</p></details>
+      <details><summary>What do I get on Seedling?</summary>
+        <!-- billing.py seedling: 15 clients, 1 therapist, no online booking -->
+        <p>Up to 15 clients and one therapist, at $0. Online booking, the client portal and the waitlist start on Professional.</p></details>
+      <details><summary>Can I cancel?</summary>
+        <!-- web_ui.py: "Cancelling stops auto-renewal at the end of the current period." -->
+        <p>Yes. Cancelling stops auto-renewal at the end of the current billing period.</p></details>
+      <details><summary>I work with other therapists. What does that cost?</summary>
+        <!-- billing.py premier: multiple therapists, $39/mo flat -->
+        <p>Premier covers multiple therapists for $39/mo, flat. There is no per-therapist charge.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- (f) FINAL CTA BAND -->
+<section class="band" aria-labelledby="cta-h">
+  <div class="wrap">
+    <h2 id="cta-h">Your next SOAP note can start as a dictation.</h2>
+    <p>Open a Seedling account at $0 and run one real session through it.</p>
+    <a class="btn" href="https://app.thesoapbook.com/signup">Start free</a>
+  </div>
+</section>
+</main>
+
+<!-- (g) FOOTER -->
+<footer><div class="wrap">
+  <span>SOAP Autopilot · <a href="https://thesoapbook.com">thesoapbook.com</a></span>
+  <span>Documentation software for licensed massage therapists. Not medical advice.</span>
+</div></footer>
+
+<script>
+(function(){var els=document.querySelectorAll('.reveal');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});})();
+</script>
+</body>
+</html>
