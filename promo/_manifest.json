@@ -1,0 +1,126 @@
+{
+  "venture": "SOAP Autopilot",
+  "package": "promo (thesoapbook.com/promo/)",
+  "base_dir": "D:/Hermes_Core/workspace/soap_site/promo",
+  "created": "2026-10-17",
+  "files": [
+    {
+      "name": "assets/og.png",
+      "bytes": 47863
+    },
+    {
+      "name": "assets/scenes/_make_video_bg.py",
+      "bytes": 4948
+    },
+    {
+      "name": "assets/scenes/scene1_notes_waiting.png",
+      "bytes": 62036
+    },
+    {
+      "name": "assets/scenes/scene2_dictate.png",
+      "bytes": 60729
+    },
+    {
+      "name": "assets/scenes/scene3_local_audio.png",
+      "bytes": 60737
+    },
+    {
+      "name": "assets/scenes/scene4_sign_lock.png",
+      "bytes": 45501
+    },
+    {
+      "name": "assets/scenes/scene5_cancel_waitlist.png",
+      "bytes": 57313
+    },
+    {
+      "name": "assets/scenes/scene6_endcard.png",
+      "bytes": 69853
+    },
+    {
+      "name": "assets/scenes/video_bg1_notes_waiting.png",
+      "bytes": 14956
+    },
+    {
+      "name": "assets/scenes/video_bg2_dictate.png",
+      "bytes": 15526
+    },
+    {
+      "name": "assets/scenes/video_bg3_local_audio.png",
+      "bytes": 13232
+    },
+    {
+      "name": "assets/scenes/video_bg4_sign_lock.png",
+      "bytes": 16320
+    },
+    {
+      "name": "assets/scenes/video_bg5_cancel_waitlist.png",
+      "bytes": 13854
+    },
+    {
+      "name": "assets/social_1080.png",
+      "bytes": 70168
+    },
+    {
+      "name": "fonts/fraunces-600-latin.woff2",
+      "bytes": 35120
+    },
+    {
+      "name": "fonts/inter-var-latin.woff2",
+      "bytes": 48256
+    },
+    {
+      "name": "fonts/LICENSE",
+      "bytes": 426
+    },
+    {
+      "name": "fonts/OFL-Fraunces.txt",
+      "bytes": 4391
+    },
+    {
+      "name": "fonts/OFL-Inter.txt",
+      "bytes": 4377
+    },
+    {
+      "name": "index.html",
+      "bytes": 17257
+    },
+    {
+      "name": "LAUNCH_KIT.md",
+      "bytes": 5703
+    },
+    {
+      "name": "video/BRIEF.md",
+      "bytes": 4927
+    },
+    {
+      "name": "video/soap_16x9.jpg",
+      "bytes": 141537
+    },
+    {
+      "name": "video/storyboard.json",
+      "bytes": 1929
+    }
+  ],
+  "pending": [
+    {
+      "name": "video/soap_16x9.mp4",
+      "state": "not rendered; page embeds this exact path; renderer writes it directly (and overwrites soap_16x9.jpg)"
+    }
+  ],
+  "verified_against": {
+    "prices Seedling $0 / Professional $14 / Premier $39": "D:/Hermes_Core/workspace/soap_autopilot/billing.py PLANS price_cents 0/1400/3900 + D:/Hermes_Core/Teams/Marketing/ops/offer_truth.json advertised_prices_usd 14, 39",
+    "tier features": "billing.py docstring lines 7-9 + soap_autopilot/README.md Features",
+    "dictation audio stays on device": "soap_autopilot/README.md 'audio never leaves the device'",
+    "signed/locked notes, amendments": "soap_autopilot/recordkeeping.py docstring",
+    "encryption": "soap_autopilot/crypto.py AES-256-GCM docstring",
+    "self-serve cancel + waitlist": "soap_autopilot/README.md client/bookings portal; web_ui.py /appt/<id>/cancel, action=waitlist",
+    "no per-therapist fee": "billing.py premier 'multiple therapists' at one flat price_cents; no seat pricing",
+    "CTA = app signup (no cs_live link)": "Teams/Marketing/LIVE_LINKS.md SOAP section + offer_truth.json (0 SOAP cs_live links)",
+    "app live": "curl https://app.thesoapbook.com -> 200 (2026-10-17)",
+    "voice": "edge-tts --list-voices: en-US-AvaNeural present",
+    "video storyboard.json": "make_promo_video.py --dry-run -> VALIDATION OK slug=soap scenes=5 voice=en-US-AvaNeural, exit 0 (2026-10-17); not rendered",
+    "site tier names": "soap_site/index.html already Seedling/Professional/Premier ($0/$14/$39); 0 Starter/Enterprise hits; wire_ctas.py --check PASS 5/5"
+  },
+  "total_files": 24,
+  "total_bytes": 816959
+}

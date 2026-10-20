@@ -1,0 +1,211 @@
+{
+ "slug": "soap",
+ "voice": "en-US-AvaNeural",
+ "tts_python": "D:\\HermesPortable\\hermes_home\\installs\\7a3b3f3f6efeb7b0\\environments\\1265287d30ae4eebb931538094a3bf03\\venv\\Scripts\\python.exe",
+ "total_s": 30.7,
+ "items": [
+  {
+   "index": 0,
+   "kind": "scene",
+   "hint": 4.0,
+   "vo_len": 3.792,
+   "window": 4.5,
+   "extended": true,
+   "start": 0.0,
+   "end": 4.5,
+   "clip_len": 5.0
+  },
+  {
+   "index": 1,
+   "kind": "scene",
+   "hint": 5.0,
+   "vo_len": 5.496,
+   "window": 6.2,
+   "extended": true,
+   "start": 4.5,
+   "end": 10.7,
+   "clip_len": 6.7
+  },
+  {
+   "index": 2,
+   "kind": "scene",
+   "hint": 4.0,
+   "vo_len": 4.464,
+   "window": 5.1667,
+   "extended": true,
+   "start": 10.7,
+   "end": 15.8667,
+   "clip_len": 5.6667
+  },
+  {
+   "index": 3,
+   "kind": "scene",
+   "hint": 5.0,
+   "vo_len": 5.088,
+   "window": 5.8,
+   "extended": true,
+   "start": 15.8667,
+   "end": 21.6667,
+   "clip_len": 6.3
+  },
+  {
+   "index": 4,
+   "kind": "scene",
+   "hint": 5.0,
+   "vo_len": 5.832,
+   "window": 6.5333,
+   "extended": true,
+   "start": 21.6667,
+   "end": 28.2,
+   "clip_len": 7.0333
+  },
+  {
+   "index": 5,
+   "kind": "cta",
+   "hint": 2.5,
+   "vo_len": null,
+   "window": 2.5,
+   "extended": false,
+   "start": 28.2,
+   "end": 30.7,
+   "clip_len": 2.5
+  }
+ ],
+ "vo_texts": [
+  "You finished the last session. Now the notes are waiting.",
+  "Dictate or paste your session, and SOAP Autopilot drafts a complete SOAP note.",
+  "Voice dictation runs locally, so the audio never leaves your device.",
+  "Signed notes lock with a tamper-evident hash. Corrections become amendments.",
+  "On Professional, clients cancel within your policy and join a waitlist themselves.",
+  null
+ ],
+ "outputs": {
+  "9x16": {
+   "mp4": "soap_9x16.mp4",
+   "poster": "soap_9x16.jpg",
+   "bytes": 4398754,
+   "poster_bytes": 66914,
+   "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuvj420p",
+      "r_frame_rate": "30/1"
+     },
+     {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "sample_rate": "48000",
+      "r_frame_rate": "0/0"
+     }
+    ],
+    "format": {
+     "duration": "30.700000",
+     "size": "4398754"
+    }
+   },
+   "midpoint_luma": [
+    {
+     "index": 0,
+     "t": 2.25,
+     "mean_luma": 104.27
+    },
+    {
+     "index": 1,
+     "t": 7.6,
+     "mean_luma": 78.03
+    },
+    {
+     "index": 2,
+     "t": 13.283,
+     "mean_luma": 39.19
+    },
+    {
+     "index": 3,
+     "t": 18.767,
+     "mean_luma": 82.84
+    },
+    {
+     "index": 4,
+     "t": 24.933,
+     "mean_luma": 101.39
+    },
+    {
+     "index": 5,
+     "t": 29.45,
+     "mean_luma": 51.13
+    }
+   ],
+   "duration_delta_s": 0.0
+  },
+  "16x9": {
+   "mp4": "soap_16x9.mp4",
+   "poster": "soap_16x9.jpg",
+   "bytes": 3891514,
+   "poster_bytes": 57351,
+   "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "pix_fmt": "yuvj420p",
+      "r_frame_rate": "30/1"
+     },
+     {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "sample_rate": "48000",
+      "r_frame_rate": "0/0"
+     }
+    ],
+    "format": {
+     "duration": "30.700000",
+     "size": "3891514"
+    }
+   },
+   "midpoint_luma": [
+    {
+     "index": 0,
+     "t": 2.25,
+     "mean_luma": 48.41
+    },
+    {
+     "index": 1,
+     "t": 7.6,
+     "mean_luma": 42.72
+    },
+    {
+     "index": 2,
+     "t": 13.283,
+     "mean_luma": 27.96
+    },
+    {
+     "index": 3,
+     "t": 18.767,
+     "mean_luma": 40.41
+    },
+    {
+     "index": 4,
+     "t": 24.933,
+     "mean_luma": 48.15
+    },
+    {
+     "index": 5,
+     "t": 29.45,
+     "mean_luma": 36.29
+    }
+   ],
+   "duration_delta_s": 0.0
+  }
+ },
+ "music": null
+}

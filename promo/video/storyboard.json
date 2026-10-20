@@ -1,0 +1,60 @@
+{
+ "venture": "SOAP Autopilot",
+ "slug": "soap",
+ "voice": "en-US-AvaNeural",
+ "brand": {
+  "palette": [
+   "#F2603A",
+   "#111827",
+   "#F8F5EF"
+  ],
+  "font_hint": "segoe"
+ },
+ "scenes": [
+  {
+   "image": "D:/Hermes_Core/workspace/soap_site/promo/assets/scenes/video_bg1_notes_waiting.png",
+   "headline": "Session done. Notes still waiting.",
+   "sub": "The charting that follows every session.",
+   "vo": "You finished the last session. Now the notes are waiting.",
+   "dur": 4.0,
+   "credit": ""
+  },
+  {
+   "image": "D:/Hermes_Core/workspace/soap_site/promo/assets/scenes/video_bg2_dictate.png",
+   "headline": "Dictate it. Get a SOAP draft.",
+   "sub": "Speak or paste the session; review a structured draft.",
+   "vo": "Dictate or paste your session, and SOAP Autopilot drafts a complete SOAP note.",
+   "dur": 5.0,
+   "credit": ""
+  },
+  {
+   "image": "D:/Hermes_Core/workspace/soap_site/promo/assets/scenes/video_bg3_local_audio.png",
+   "headline": "Audio stays on your device.",
+   "sub": "Voice dictation runs locally on your own machine.",
+   "vo": "Voice dictation runs locally, so the audio never leaves your device.",
+   "dur": 4.0,
+   "credit": ""
+  },
+  {
+   "image": "D:/Hermes_Core/workspace/soap_site/promo/assets/scenes/video_bg4_sign_lock.png",
+   "headline": "Sign it. Lock it.",
+   "sub": "Corrections become amendments, never silent edits.",
+   "vo": "Signed notes lock with a tamper-evident hash. Corrections become amendments.",
+   "dur": 5.0,
+   "credit": ""
+  },
+  {
+   "image": "D:/Hermes_Core/workspace/soap_site/promo/assets/scenes/video_bg5_cancel_waitlist.png",
+   "headline": "Self-serve cancel and waitlist.",
+   "sub": "Clients manage visits within your policy.",
+   "vo": "On Professional, clients cancel within your policy and join a waitlist themselves.",
+   "dur": 5.0,
+   "credit": ""
+  }
+ ],
+ "cta": {
+  "line": "Start free on Seedling",
+  "url": "thesoapbook.com",
+  "dur": 2.5
+ }
+}

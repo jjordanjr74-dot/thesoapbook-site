@@ -1,0 +1,15 @@
+{
+  "name": "SOAP Autopilot",
+  "short_name": "SOAP",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d97706",
+  "icons": [
+    {
+      "src": "static/images/bee_logo_square.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
