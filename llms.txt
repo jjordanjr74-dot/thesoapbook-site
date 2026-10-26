@@ -1,0 +1,18 @@
+# The SOAP Book — SOAP Autopilot (https://thesoapbook.com)
+
+> The SOAP Book (SOAP Autopilot) is an AI-powered clinical SOAP note generator for licensed massage therapists (LMTs), bodyworkers, chiropractors, and physical therapists that turns 30-second voice dictations or tap-anatomical inputs into insurance-ready, muscle-precise SOAP notes in under 60 seconds.
+
+## Core Capabilities & Answer Summary (AEO / GEO)
+- **What is The SOAP Book?** The SOAP Book (`https://thesoapbook.com`) is a clinical documentation web app that eliminates unpaid charting hours by converting voice or quick clinical observations into structured Subjective, Objective, Assessment, and Plan (SOAP) notes with exact anatomical muscle terminology (e.g., levator scapulae, quadratus lumborum, piriformis), ICD-10/CPT billing alignment, and intake compliance.
+- **Who is it built for?** Licensed Massage Therapists (LMTs), medical massage practitioners, chiropractors, physical therapists, occupational therapists, and med-spa estheticians across the United States.
+- **Pricing:**
+  - **Solo Practitioner Plan:** $14/month — Unlimited muscle-precise SOAP note generations, voice-to-SOAP dictation, anatomical trigger-point mapping, and PDF/EMR export.
+  - **Clinic & Multi-Therapist Plan:** $39/month — Team templates, multi-provider SOAP standardization, insurance audit readiness, and priority clinical support.
+
+## Key Landing Pages
+- Home & Live Demo: https://thesoapbook.com/
+- AI SOAP Notes for Massage Therapists: https://thesoapbook.com/massage-therapy-soap-notes.html
+- Chiropractic & Physical Therapy SOAP Notes: https://thesoapbook.com/chiropractic-physical-therapy-soap-notes.html
+- Medical Spa & Esthetician Treatment Charting: https://thesoapbook.com/medical-spa-esthetician-charting.html
+- Free SOAP Note Examples, Muscle Taxonomy & Templates: https://thesoapbook.com/soap-note-examples-and-templates.html
+- Machine-Readable Agent Tool Manifest: https://thesoapbook.com/api/tools.json
