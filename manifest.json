@@ -1,15 +1,44 @@
 {
-  "name": "SOAP Autopilot",
-  "short_name": "SOAP",
-  "start_url": "./",
+  "id": "/",
+  "name": "SOAP Autopilot \u2014 Clinical Charting for Massage & Bodywork",
+  "short_name": "SOAP Autopilot",
+  "description": "60-second voice-to-SOAP clinical notes, anatomical muscle mapping, and intake automation for therapists.",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#d97706",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0d9488",
+  "lang": "en-US",
+  "dir": "ltr",
   "icons": [
     {
-      "src": "static/images/bee_logo_square.png",
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.thesoapbook.app",
+      "sha256_cert_fingerprints": [
+        "BF:B7:88:5C:D7:2F:70:33:AB:65:BE:5C:9B:FD:56:56:37:3E:CB:77:3E:A5:A0:A4:24:DE:0F:72:F1:33:EF:41"
+      ]
+    }
+  }
+]
