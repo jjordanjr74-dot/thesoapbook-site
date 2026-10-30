@@ -23,22 +23,22 @@
 <style>
 @font-face{font-family:"Fraunces";src:url("fonts/fraunces-600-latin.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
 @font-face{font-family:"Inter";src:url("fonts/inter-var-latin.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
-:root{--ink:#111827;--ink2:#1f2937;--ink3:#374151;--paper:#faf7f2;--muted:#cbd5e1;--honey:#f2603a;--rule:#e2dcd2;
+:root{--ink:#ffffff;--ink2:#f0fdfa;--ink3:#ccfbf1;--paper:#0f172a;--muted:#334155;--honey:#0d9488;--rule:#cbd5e1;
   --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--paper);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+body{background:linear-gradient(180deg,#ffffff 0%,#f0fdfa 50%,#fefce8 100%);color:var(--paper);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--honey);color:var(--ink);padding:8px 12px;border-radius:6px;z-index:9}
-header.bar{border-top:6px solid var(--honey)}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--honey);color:#ffffff;padding:8px 12px;border-radius:6px;z-index:9}
+header.bar{border-top:6px solid var(--honey);background:#ffffff;border-bottom:1px solid #e2e8f0}
 header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
 .mark{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--honey);text-decoration:none}
 .btn{display:inline-block;font:600 16px/1 var(--sans);text-decoration:none;border-radius:999px;padding:15px 26px;transition:transform .15s ease}
 .btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--honey);outline-offset:3px}
-.btn-pri{background:var(--honey);color:var(--ink)}
+.btn-pri{background:var(--honey);color:#ffffff;box-shadow:0 8px 20px rgba(13,148,136,.25)}
 .btn-pri:hover{transform:translateY(-1px)}
-.btn-ghost{border:1.5px solid var(--muted);color:var(--paper)}
+.btn-ghost{border:2px solid var(--honey);color:var(--honey)}
 .btn-sm{padding:10px 18px;font-size:14px}
 h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08}
 h1{font-size:clamp(40px,8.4vw,84px);max-width:13ch}
