@@ -14,5 +14,7 @@
 - AI SOAP Notes for Massage Therapists: https://thesoapbook.com/massage-therapy-soap-notes.html
 - Chiropractic & Physical Therapy SOAP Notes: https://thesoapbook.com/chiropractic-physical-therapy-soap-notes.html
 - Medical Spa & Esthetician Treatment Charting: https://thesoapbook.com/medical-spa-esthetician-charting.html
-- Free SOAP Note Examples, Muscle Taxonomy & Templates: https://thesoapbook.com/soap-note-examples-and-templates.html
+- Free SOAP Note Examples, Muscle Taxonomy & Templates: https://thesoapbook.com/resources.html
 - Machine-Readable Agent Tool Manifest: https://thesoapbook.com/api/tools.json
+
+- Sitemap: https://thesoapbook.com/sitemap.xml
