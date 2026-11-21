@@ -144,7 +144,7 @@ footer a{color:var(--acc);text-decoration:none;font-weight:500}
 .progress-chart .bar:nth-child(3) { height: 60%; background: linear-gradient(to top, #64748b, #94a3b8); }
 .progress-chart .bar:nth-child(4) { height: 45%; background: linear-gradient(to top, #475569, #64748b); }
 .progress-chart .bar:nth-child(5) { height: 30%; background: linear-gradient(to top, #334155, #475569); }
-.progress-chart .bar:nth-child(6) { height: 15%; background: linear-gradient(to top, #1e293b, #334155); }
+.progress-chart .bar:nth-child(6) { height: 15%; background: linear-gradient(to top, #115e59, #334155); }
 
 .progress-chart .bar-label { position: absolute; bottom: -24px; left: 0; right: 0; text-align: center; font-size: 0.85rem; color: var(--mut); font-weight: 500; }
 
@@ -849,7 +849,7 @@ function updateSoapCalc() {
   Object.keys(esMap).forEach(function(k){ revMap[esMap[k]] = k; });
   var bar = document.createElement('aside');
   bar.setAttribute('aria-label', 'Language selector / Selector de idioma');
-  bar.style.cssText = 'position:fixed;bottom:18px;left:18px;z-index:9999;background:#0f172a;color:#fff;padding:8px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,0.25);font-size:0.84rem;font-weight:700;display:flex;align-items:center;gap:8px;border:2px solid #0f766e;';
+  bar.style.cssText = 'position:fixed;bottom:18px;left:18px;z-index:9999;background:#115e59;color:#fff;padding:8px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,0.25);font-size:0.84rem;font-weight:700;display:flex;align-items:center;gap:8px;border:2px solid #0f766e;';
   var btnEn = document.createElement('button');
   btnEn.type = 'button';
   btnEn.textContent = 'EN';
