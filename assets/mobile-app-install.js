@@ -20,7 +20,7 @@
     if (document.getElementById('sheba-mobile-app-bar')) return;
     var bar = document.createElement('div');
     bar.id = 'sheba-mobile-app-bar';
-    bar.style.cssText = 'position:fixed;bottom:16px;left:16px;z-index:9998;display:flex;align-items:center;gap:8px;background:#0f172a;color:#ffffff;border:1px solid #0d9488;border-radius:999px;padding:7px 12px;box-shadow:0 10px 28px rgba(0,0,0,0.45);font-family:system-ui,-apple-system,sans-serif;font-size:12.5px;line-height:1.2;max-width:calc(100vw - 32px);';
+    bar.style.cssText = 'position:fixed;bottom:16px;left:16px;z-index:9998;display:flex;align-items:center;gap:8px;background:#115e59;color:#ffffff;border:1px solid #0d9488;border-radius:999px;padding:7px 12px;box-shadow:0 10px 28px rgba(0,0,0,0.45);font-family:system-ui,-apple-system,sans-serif;font-size:12.5px;line-height:1.2;max-width:calc(100vw - 32px);';
     var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent || '') && !window.MSStream;
 
     var installBtn = document.createElement('button');
