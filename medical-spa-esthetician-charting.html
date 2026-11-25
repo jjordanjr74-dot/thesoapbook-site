@@ -70,6 +70,19 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <meta property="og:image" content="https://thesoapbook.com/og-1200x630.png">
+<style>
+/* 44px touch-target floor (WCAG 2.5.5) rendered-DOM 2026-11-25 */
+header a, nav a, footer a, [role=tab], button, select, .chip, .pill, .tag, .skip, .back,
+a[href^="mailto:"], a[href^="tel:"], a[download], a[href$=".apk"],
+[class*="btn"], [class*="cta"], [class*="lang"] a, [class*="lang"] button {
+  min-height: 44px; min-width: 44px; display: inline-flex; align-items: center;
+}
+/* inline text links: expand the hit area without changing line layout */
+a { min-height: 44px; }
+p a, h1 a, h2 a, h3 a, h4 a, h5 a, td a, dd a, strong a, b a, em a, span a, a:has(> strong), a:has(> b), a:has(> em), .footer-sister a, .err-hint a, li a {
+  padding: 15px 4px; margin: -15px -4px;
+}
+</style>
 </head>
 <body style="font-family:system-ui,-apple-system,sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:0;">
 <div style="max-width:860px;margin:18px auto 0;padding:0 20px;"><a href="https://thesoapbook.com/" style="display:inline-flex;align-items:center;background:#ffffff;padding:6px 14px;border-radius:10px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.18);"><img src="/assets/logo-lockup.png" alt="The SOAP Book — SOAP Autopilot" style="height:42px;width:auto;display:block;"></a></div>
