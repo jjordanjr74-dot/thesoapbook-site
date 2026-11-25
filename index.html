@@ -35,7 +35,7 @@
 <style>
 :root{
   --bg:#f8fafc; --bg2:#f1f5f9; --card:#ffffff; --line:#e2e8f0;
-  --txt:#0f172a; --mut:#64748b; --acc:#0f766e; --acc2:#14b8a6;
+  --txt:#0f172a; --mut:#475569; --acc:#0f766e; --acc2:#14b8a6;
   --amber:#f59e0b; --rad:3px; --txt3:#475569;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -295,6 +295,12 @@ footer a{color:var(--acc);text-decoration:none;font-weight:500}
   ]
 }
 </script>
+<style id="tap-target-floor-2026-11-25">
+a[href],button,input,select,textarea,[role="button"],summary{min-height:44px !important;}
+button,input,select,textarea,[role="button"]{min-width:44px !important;}
+nav a,header a,footer a,.footer a,p a,li a{display:inline-flex !important;align-items:center;min-width:44px;}
+summary{display:flex !important;align-items:center;}
+</style>
 </head>
 <body>
 
@@ -638,7 +644,7 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
   <div style="margin: 16px auto 64px; background: var(--card); border: 2px solid var(--acc); border-radius: var(--rad); padding: 32px; box-shadow: var(--shadow-lg); overflow-x: auto;">
     <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 8px; color: var(--txt);">In Today&apos;s Economy: How SOAP Autopilot Compares on Price &amp; Features</h3>
     <p style="text-align: center; color: var(--mut); margin-bottom: 24px; font-size: 1.02rem;">Stop paying $69&ndash;$99/month plus per-seat add-ons just to write notes, send reminders, and protect against no-shows.</p>
-    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 640px;">
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%"><table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 640px;">
       <thead>
         <tr style="border-bottom: 2px solid var(--line); text-align: left; background: var(--bg2);">
           <th style="padding: 12px 14px;">Feature &amp; Monthly Cost (2026 Published Rates)</th>
@@ -678,7 +684,7 @@ Billing: 45 min → 3 billable unit(s) under 8-minute rule ✓</pre>
           <td style="padding: 12px 14px;">Manual point-and-click only</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <aside id="soap-roi-calc" style="margin-top: 24px; padding: 20px; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px;">
       <p style="margin: 0 0 10px; font-weight: 700; font-size: 1.05rem; color: var(--txt);">Interactive Global Savings &amp; Currency Calculator (US, Canada, UK, EU, Australia &amp; Latin America)</p>
       <p style="margin: 0 0 12px; font-size: 0.94rem;">

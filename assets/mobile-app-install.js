@@ -26,7 +26,7 @@
     var installBtn = document.createElement('button');
     installBtn.type = 'button';
     installBtn.textContent = isIOS ? '📱 Install iOS App' : '📱 Install App';
-    installBtn.style.cssText = 'background:#0d9488;color:#fff;border:none;border-radius:999px;padding:6px 11px;font-weight:700;font-size:12px;cursor:pointer;white-space:nowrap;';
+    installBtn.style.cssText = 'background:#0f766e;color:#fff;border:none;border-radius:999px;padding:6px 11px;font-weight:700;font-size:12px;cursor:pointer;white-space:nowrap;';
     installBtn.onclick = function() {
       if (deferredPrompt) {
         deferredPrompt.prompt();
