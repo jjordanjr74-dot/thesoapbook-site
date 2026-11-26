@@ -23,7 +23,7 @@
 <style>
 @font-face{font-family:"Fraunces";src:url("fonts/fraunces-600-latin.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
 @font-face{font-family:"Inter";src:url("fonts/inter-var-latin.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
-:root{--ink:#ffffff;--ink2:#f0fdfa;--ink3:#ccfbf1;--paper:#0f172a;--muted:#334155;--honey:#0d9488;--rule:#cbd5e1;
+:root{--ink:#ffffff;--ink2:#f0fdfa;--ink3:#ccfbf1;--paper:#0f172a;--muted:#334155;--honey:#0f766e;--rule:#cbd5e1;
   --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -51,7 +51,7 @@ section{padding:72px 0;border-top:1px solid var(--ink3)}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .fine{color:var(--muted);font-size:14px;margin-top:14px}
 /* CSS-drawn note-card motif */
-.card-note{background:var(--paper);color:var(--ink);border-radius:18px;padding:22px 22px 22px 70px;position:relative;max-width:420px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.card-note{background:#ffffff;color:#0f172a;border-radius:18px;padding:22px 22px 22px 70px;position:relative;max-width:420px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 .card-note::before{content:"";position:absolute;left:52px;top:12px;bottom:12px;width:3px;background:var(--honey)}
 .card-note .row{display:grid;grid-template-columns:1fr;gap:9px;padding:12px 0;position:relative}
 .card-note .row b{position:absolute;left:-50px;top:10px;font:600 15px/1 var(--sans)}
@@ -102,6 +102,12 @@ footer a{color:var(--paper)}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<style id="tap-target-floor-2026-11-25">
+a[href],button,input,select,textarea,[role="button"],summary{min-height:44px !important;}
+button,input,select,textarea,[role="button"]{min-width:44px !important;}
+nav a,header a,footer a,[class*="footer"] a,p a,li a,a[class~="back"]{display:inline-flex !important;align-items:center;min-width:44px;}
+summary{display:flex !important;align-items:center;}
+</style>
 </head>
 <body>
 <div style="max-width:1100px;margin:16px auto 0;padding:0 20px;"><a href="/" style="display:inline-flex;align-items:center;background:#ffffff;padding:6px 14px;border-radius:10px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><img src="/assets/logo-lockup.png" alt="The SOAP Book — SOAP Autopilot" style="height:42px;width:auto;display:block;"></a></div>
